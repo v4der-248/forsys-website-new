@@ -152,6 +152,33 @@
   });
 })();
 
+/* ── FOOTER POLICY DROPUP (all pages) ───────────────────── */
+(function () {
+  const btn = document.querySelector('.policy-btn');
+  if (!btn) return;
+
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    const isOpen = btn.classList.contains('policy-btn--open');
+    btn.classList.toggle('policy-btn--open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.policy-btn')) {
+      btn.classList.remove('policy-btn--open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      btn.classList.remove('policy-btn--open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+
 /* ── HOMEPAGE ────────────────────────────────────────────── */
 if (document.querySelector('.page-home')) {
   (function () {
