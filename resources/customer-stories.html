@@ -50,7 +50,9 @@
       padding: 0 48px;
     }
 
-    /* ── Read More link inside card ────────────────────────── */
+    /* ── Whole card clickable via stretched link ─────────────── */
+    .res-card { position: relative; }
+
     .res-card-read-more {
       display: inline-flex;
       align-items: center;
@@ -64,7 +66,14 @@
       transition: gap 0.15s ease;
     }
 
-    .res-card-read-more:hover { gap: 8px; }
+    /* Stretch anchor to cover entire card */
+    .res-card-read-more::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
+    .res-card:hover .res-card-read-more { gap: 8px; }
     .res-card-read-more:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; border-radius: 2px; }
 
     /* ── Responsive ─────────────────────────────────────────── */
@@ -1480,7 +1489,7 @@
         <a href="../index.html" class="nav-logo">
           <img src="../assets/images/Forsys_Logo.svg" alt="Forsys" class="nav-logo-img footer-logo-img" height="30" loading="lazy">
         </a>
-        <p>AI Native. AI Fast. The Lead-to-Revenue transformation partner for modern enterprises — 500+ engagements, 250+ global customers, 1,000+ specialists.</p>
+        <p>AI Native. AI Fast. The Lead-to-Revenue transformation partner for modern enterprises.</p>
       </div>
       <div class="footer-col">
         <h4>What We Do</h4>

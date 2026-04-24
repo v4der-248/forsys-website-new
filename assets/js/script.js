@@ -439,3 +439,48 @@ if (document.querySelector('.res-filter')) {
     });
   })();
 }
+
+
+
+/* ── TESTIMONIAL CAROUSEL (homepage) ─────────────────────── */
+(function () {
+  var slides = document.querySelectorAll('.test-slide');
+  var dots = document.querySelectorAll('.test-dot');
+  if (!slides.length) return;
+
+  var current = 0;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    dots[current].setAttribute('aria-selected', 'false');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    dots[current].setAttribute('aria-selected', 'true');
+  }
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () { goTo(i); });
+  });
+
+  // Auto-advance every 5s
+  var timer = setInterval(function () { goTo(current + 1); }, 5000);
+  document.querySelector('.test-carousel').addEventListener('mouseenter', function () { clearInterval(timer); });
+  document.querySelector('.test-carousel').addEventListener('mouseleave', function () {
+    timer = setInterval(function () { goTo(current + 1); }, 5000);
+  });
+})();
+
+/* ── CTA SECTION — remove padding-top when above section is white ── */
+(function () {
+  const WHITE = 'rgb(255, 255, 255)';
+  document.querySelectorAll('.cta-section').forEach(function (cta) {
+    var prev = cta.previousElementSibling;
+    if (!prev) return;
+    var bg = window.getComputedStyle(prev).backgroundColor;
+    if (bg === WHITE) {
+      cta.style.paddingTop = '0';
+    }
+  });
+})();

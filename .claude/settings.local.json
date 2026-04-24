@@ -8,7 +8,19 @@
       "Bash(python -c ' *)",
       "Bash(node -e ' *)",
       "Bash(node check-links.js)",
-      "Bash(node fix-logos.js)"
+      "Bash(node fix-logos.js)",
+      "WebFetch(domain:forsysinc.com)",
+      "Bash(find \"C:\\\\\\\\Users\\\\\\\\mujikeer.mohammad_fo\\\\\\\\Downloads\\\\\\\\forsys-website-new-main\" -name \"*.html\" -type f)",
+      "Bash(cat)",
+      "Bash(python /tmp/check_links.py)",
+      "Bash(cd \"C:\\\\\\\\Users\\\\\\\\mujikeer.mohammad_fo\\\\\\\\Downloads\\\\\\\\forsys-website-new-main\")",
+      "Bash(find . -name \"*.html\" -type f -exec grep -l 'href=\"' {} \\\\;)",
+      "Bash(xargs grep *)",
+      "Bash(chmod +x /tmp/check_links.sh)",
+      "Bash(bash /tmp/check_links.sh)",
+      "Bash(bash /tmp/check_all.sh)",
+      "Bash(grep -r \"igloo\" . --include=\"*.html\" ! -path \"*/forsys-website-new-main/*\")",
+      "Bash(grep -r \"summit-partner\" . --include=\"*.html\" ! -path \"*/forsys-website-new-main/*\")"
     ]
   }
 }

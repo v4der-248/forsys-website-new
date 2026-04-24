@@ -458,7 +458,7 @@
 /* ── RESOURCES ───────────────────────────────────────────── */
 .resources { background: var(--white); }
 .resources-grid {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
   max-width: var(--container-max); margin: 0 auto;
 }
 .resource-card {

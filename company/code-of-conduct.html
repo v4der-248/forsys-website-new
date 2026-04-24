@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code of Conduct | Forsys</title>
+  <meta name="description" content="Forsys Code of Conduct — our commitment to integrity, respect, and ethical business practices across all operations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/company.css">
+  <style>
+    .gradient-text {
+      background: linear-gradient(90deg, #6B48FF 0%, #00B4D8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .coc-body {
+      background: var(--white);
+      padding: 80px 0;
+    }
+    .coc-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .coc-foreword {
+      background: var(--bg);
+      border-left: 4px solid var(--purple);
+      border-radius: 0 12px 12px 0;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+    .coc-foreword p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .coc-foreword cite {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: normal;
+      font-weight: 600;
+    }
+    .coc-section {
+      margin-bottom: 48px;
+    }
+    .coc-section-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 8px;
+      font-family: Inter, sans-serif;
+    }
+    .coc-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 14px;
+    }
+    .coc-section p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 12px;
+    }
+    .coc-section ul {
+      margin: 12px 0 0 0;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .coc-section ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .coc-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+    .coc-values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .coc-value-chip {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-family: Inter, sans-serif;
+    }
+    @media (max-width: 768px) {
+      .coc-values-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .coc-values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="page-company">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <nav id="main-nav" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/images/Forsys_Logo.svg" alt="Forsys" class="nav-logo-img" height="30" loading="lazy">
+  </a>
+
+  <div class="nav-center" role="menubar">
+
+    <!-- ── WHAT WE DO (5-column mega menu) ── -->
+    <div class="nav-item" role="none">
+      <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+        What We Do
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="mega-menu mega-menu--wide" role="menu">
+        <div class="mega-grid mega-grid--wwd">
+
+          <div class="mega-col">
+            <div class="mega-col-title">Business Advisory</div>
+            <ul>
+              <li><a href="../services/revenue-lifecycle-strategy.html" role="menuitem">Revenue Lifecycle Strategy<small>Lead-to-Revenue end-to-end process &amp; advisory</small></a></li>
+              <li><a href="../services/build-or-buy-strategy.html" role="menuitem">Build or Buy Strategy<small>Assess Build vs Buy ROI with matured TCO matrix</small></a></li>
+              <li><a href="../services/enterprise-ai-strategy.html" role="menuitem">Enterprise AI Strategy<small>Chart your AI journey</small></a></li>
+              <li><a href="../services/autonomous-commerce.html" role="menuitem">Autonomous Commerce<small>Agentic Buyer Journeys</small></a></li>
+            </ul>
+          </div>
+
+          <div class="mega-col mega-col--platform">
+            <div class="mega-col-title mega-col-title--platform">Salesforce Solutions</div>
+            <ul>
+              <li><a href="../solutions/salesforce/agentforce-crm.html" role="menuitem">Agentforce CRM<small>Sales, Service, Experience, Marketing</small></a></li>
+              <li><a href="../solutions/salesforce/agentforce-revenue-management.html" role="menuitem">Agentforce Revenue Management<small>Quote, Contract, Config, Assets, Billing, Orders</small></a></li>
+              <li><a href="../solutions/salesforce/agentforce-commerce.html" role="menuitem">Agentforce Commerce<small>Autonomous Salesforce commerce experiences</small></a></li>
+              <li><a href="../solutions/salesforce/agentforce-platform.html" role="menuitem">Agentforce Platform<small>Data 360, Agents &amp; Custom Development</small></a></li>
+              <li><a href="../solutions/salesforce/manufacturing-cloud.html" role="menuitem">Agentforce Manufacturing<small>Unify manufacturing on Salesforce</small></a></li>
+            </ul>
+          </div>
+
+          <div class="mega-col mega-col--platform">
+            <div class="mega-col-title mega-col-title--platform">Conga + PROS B2B</div>
+            <ul>
+              <li><a href="../solutions/conga-pros/revenue-and-commerce.html" role="menuitem">Revenue &amp; Commerce<small>Conga CPQ, Digital Commerce &amp; Billing</small></a></li>
+              <li><a href="../solutions/conga-pros/contract-lifecycle-management.html" role="menuitem">Contract Lifecycle Management<small>Contracts from creation to renewal</small></a></li>
+              <li><a href="../solutions/conga-pros/pros-smart-pricing.html" role="menuitem">PROS Smart Pricing Optimization<small>AI-driven dynamic pricing wins</small></a></li>
+              <li><a href="../solutions/conga-pros/pros-b2b.html" role="menuitem">PROS Smart CPQ<small>Configure, price, quote faster</small></a></li>
+            </ul>
+            <div class="mega-sub-divider"></div>
+            <div class="mega-col-title mega-col-title--platform">Oracle Solutions</div>
+            <ul>
+              <li><a href="../solutions/oracle/fusion-finance-accounting.html" role="menuitem">Fusion Finance &amp; Accounting<small>Modern Oracle finance operations</small></a></li>
+              <li><a href="../solutions/oracle/fusion-supply-chain.html" role="menuitem">Fusion Supply Chain &amp; Manufacturing<small>Connected Oracle supply chain</small></a></li>
+              <li><a href="../solutions/oracle/oic-paas.html" role="menuitem">OIC / PaaS<small>Integrate and extend Oracle</small></a></li>
+              <li><a href="../solutions/oracle/bpa-aistudio.html" role="menuitem">Business Process Automation — AIStudio<small>AI-powered process automation</small></a></li>
+            </ul>
+          </div>
+
+          <div class="mega-col">
+            <div class="mega-col-title">Services</div>
+            <div class="mega-sub-header">Technology</div>
+            <ul>
+              <li><a href="../services/ai-application-development.html" role="menuitem">AI led Application Development<small>Intelligent connected IoT apps</small></a></li>
+              <li><a href="../services/ai-agents-development.html" role="menuitem">AI &amp; Agents Development<small>Deploy agents for business</small></a></li>
+              <li><a href="../services/integrations.html" role="menuitem">Integrations<small>MuleSoft, OIC, FloData</small></a></li>
+              <li><a href="../services/data-migration.html" role="menuitem">Data Migration<small>FloData</small></a></li>
+              <li><a href="../services/devops.html" role="menuitem">DevOps<small>Reliable, automated delivery</small></a></li>
+            </ul>
+            <div class="mega-sub-header">AI Managed Services</div>
+            <ul>
+              <li><a href="../services/ai-enabled-managed-services.html" role="menuitem">AI Powered Managed Services<small>Always-on AI managed support</small></a></li>
+            </ul>
+          </div>
+
+          <div class="mega-col mega-col--ai">
+            <div class="mega-col-title">Forsys AI Solutions</div>
+            <ul>
+              <li><a href="../forsys-solutions/revramp.html" role="menuitem">RevRamp<small>Fast &amp; Seamless CPQ Data Migration</small></a></li>
+              <li><a href="../forsys-solutions/lexishift.html" role="menuitem">LexiShift<small>Intelligent Contract Data Extraction</small></a></li>
+              <li><a href="../forsys-solutions/revmove.html" role="menuitem">RevMove<small>Platform Migration Intelligence</small></a></li>
+              <li><a href="../forsys-solutions/mna-for-salesforce.html" role="menuitem">MnA for Salesforce<small>Salesforce Org Migration</small></a></li>
+              <li><a href="../forsys-solutions/aitest.html" role="menuitem">AITest<small>AI-Powered Testing</small></a></li>
+              <li><a href="../forsys-solutions/ai-agents.html" role="menuitem">AI Agents<small>Intelligent agents, built for you</small></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item" role="none">
+      <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+        Industries
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="dropdown" role="menu">
+        <a href="../industries/hi-tech.html" role="menuitem">Hi-Tech</a>
+        <a href="../industries/financial-services.html" role="menuitem">Financial Services</a>
+        <a href="../industries/healthcare-life-sciences.html" role="menuitem">Healthcare &amp; Life Sciences</a>
+        <a href="../industries/manufacturing.html" role="menuitem">Manufacturing</a>
+        <a href="../industries/saas-subscription.html" role="menuitem">SaaS &amp; Subscription Businesses</a>
+      </div>
+    </div>
+
+    <div class="nav-item" role="none">
+      <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+        Partnerships
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="dropdown" role="menu">
+        <span class="dropdown-group-label">Strategic Partners</span>
+        <a href="../partnerships/salesforce.html" role="menuitem">Salesforce</a>
+        <a href="../partnerships/conga.html" role="menuitem">Conga</a>
+        <a href="../partnerships/oracle.html" role="menuitem">Oracle</a>
+        <div class="dropdown-divider"></div>
+        <span class="dropdown-group-label">Technology Partners</span>
+        <a href="../partnerships/rocketlane.html" role="menuitem">RocketLane</a>
+        <a href="../partnerships/provus.html" role="menuitem">Provus</a>
+        <a href="../partnerships/m3ter.html" role="menuitem">M3ter</a>
+        <a href="../partnerships/servicenow.html" role="menuitem">ServiceNow</a>
+        <a href="../partnerships/flosum.html" role="menuitem">Flosum</a>
+      </div>
+    </div>
+
+    <div class="nav-item" role="none">
+      <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+        Resources
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="dropdown" role="menu">
+        <a href="../resources/customer-stories.html" role="menuitem">Customer Stories</a>
+        <a href="../resources/webinars-media.html" role="menuitem">Webinars &amp; Events</a>
+        <a href="http://forsysinc.com/blog" role="menuitem">Blogs</a>
+      </div>
+    </div>
+
+    <div class="nav-item" role="none">
+      <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+        Company
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="dropdown" role="menu">
+        <a href="about.html" role="menuitem">About Forsys</a>
+        <a href="leadership.html" role="menuitem">Leadership</a>
+        <a href="culture.html" role="menuitem">Culture</a>
+        <a href="careers.html" role="menuitem">Careers</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="nav-right">
+    <a href="contact.html" class="btn-nav-primary">Contact Us</a>
+    <button class="nav-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="co-hero" aria-labelledby="hero-title">
+      <div class="co-hero-inner">
+        <div class="co-hero-eyebrow">Company Policy</div>
+        <h1 class="co-hero-title" id="hero-title">Code of <span class="gradient-text">Conduct</span></h1>
+        <p class="co-hero-desc">Our commitment to integrity, respect, and ethical business practices — guiding every interaction with colleagues, clients, vendors, and the communities we serve.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <div class="coc-body">
+      <div class="coc-container">
+
+        <!-- Foreword -->
+        <div class="coc-foreword">
+          <p>This Code of Conduct reflects the values Forsys was built on — integrity, respect, and a genuine commitment to doing right by our people, our clients, and our partners. It guides how we operate every day, in every interaction.</p>
+          <cite>&mdash; Jaya Prasad Vejendla, Forsys Leadership &middot; July 2021</cite>
+        </div>
+
+        <!-- I. Introduction -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section I</div>
+          <h2>Introduction</h2>
+          <p>This Forsys Code of Conduct guides all employees in upholding ethical standards across every interaction — with colleagues, clients, vendors, and regulatory agencies. It sets the foundation for how we conduct ourselves as a company and as individuals representing Forsys.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- II. Policy -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section II</div>
+          <h2>Policy</h2>
+          <p>All employees are required to conduct business honestly, avoid conflicts of interest, and comply with all applicable laws and regulations. Forsys expects the highest standards of professional conduct from everyone who represents the company.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- III. Report Violations -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section III</div>
+          <h2>Report Violations</h2>
+          <p>Employees who suspect a violation of this Code must report it to their supervisor, manager, or HR. All good-faith reports are protected — retaliation against anyone who reports a concern is strictly prohibited.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- IV. Ethical Business Practices -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section IV</div>
+          <h2>Ethical Business Practices</h2>
+          <p>Forsys conducts all business with the highest ethical standards. Our core values define how we work:</p>
+          <div class="coc-values-grid">
+            <div class="coc-value-chip">Committed to Customers</div>
+            <div class="coc-value-chip">Deliver Results</div>
+            <div class="coc-value-chip">Passion for Innovation</div>
+            <div class="coc-value-chip">Uncompromised Quality &amp; Transparency</div>
+            <div class="coc-value-chip">Corporate Governance</div>
+            <div class="coc-value-chip">Respect</div>
+          </div>
+          <p style="margin-top: 20px;">Bribery, inappropriate gifts, and entertainment that could create unfair advantages are strictly prohibited.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- V. Conflict of Interest -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section V</div>
+          <h2>Conflict of Interest</h2>
+          <p>Employees must avoid situations where personal interests conflict with the interests of Forsys. Restrictions apply to outside employment, personal relationships with coworkers, and gift acceptance. The maximum value for gifts is $50 / &#8377;1,000.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- VI. Environmental & Health Safety -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section VI</div>
+          <h2>Environmental &amp; Health Safety</h2>
+          <p>All employees must adhere to environmental laws and safety regulations. Safety violations must be reported immediately. Forsys is committed to maintaining a safe and healthy work environment for all.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- VII. Privacy -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section VII</div>
+          <h2>Privacy</h2>
+          <p>Forsys is committed to protecting personal data and maintaining the integrity of private information — for employees, clients, and partners alike. All employees must handle personal data with care and in accordance with applicable privacy laws.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- VIII. Email / Internet -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section VIII</div>
+          <h2>Email &amp; Internet Use</h2>
+          <p>Company systems are business property. Internet and email usage may be monitored. Transmission of confidential information without appropriate security measures is prohibited. Employees are expected to use company resources responsibly and professionally.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- IX. Discrimination and Harassment -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section IX</div>
+          <h2>Discrimination and Harassment</h2>
+          <p>Forsys maintains a zero-tolerance policy for discrimination and harassment in any form. Prohibited conduct includes:</p>
+          <ul>
+            <li>Unwanted sexual advances or requests for sexual favors</li>
+            <li>Unwanted touching or physical contact</li>
+            <li>Derogatory comments based on race, gender, religion, age, disability, or any protected characteristic</li>
+            <li>Creating or contributing to a hostile work environment</li>
+            <li>Retaliation against anyone who reports harassment</li>
+          </ul>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- X. Workplace Violence -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section X</div>
+          <h2>Workplace Violence</h2>
+          <p>Forsys maintains a zero-tolerance policy for workplace violence. Threats, intimidation, or physical assaults of any kind — against employees, clients, or visitors — are strictly prohibited and will result in immediate disciplinary action.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XI. Weapons Prohibition -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XI</div>
+          <h2>Weapons Prohibition</h2>
+          <p>Firearms and weapons are prohibited on all Forsys facilities without explicit authorization. This applies to all employees, contractors, and visitors.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XII. Illegal Drugs and Alcohol -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XII</div>
+          <h2>Illegal Drugs and Alcohol</h2>
+          <p>The distribution, possession, or use of illegal substances is prohibited on company premises or during any business activity. Employees must not report to work or conduct business while under the influence of alcohol or illegal drugs.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XIII. Prohibited Substances -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XIII</div>
+          <h2>Prohibited Substances</h2>
+          <p>Alcohol consumption is not permitted on company property. Smoking is restricted to designated areas only. Employees who appear impaired will be denied entry to the workplace.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XIV. Government Cooperation -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XIV</div>
+          <h2>Government Cooperation</h2>
+          <p>Employees must fully cooperate with any lawful government investigations. Destruction of documents, false statements, and obstruction of any investigation are strictly prohibited and may result in immediate termination and legal action.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XV. Dress Code -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XV</div>
+          <h2>Dress Code</h2>
+          <p>Forsys requires professional appearance and adherence to a formal dress code policy during business hours and client interactions. Casual attire is permitted on Fridays, subject to good judgment and professionalism.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XVI. Health and Safety Rules -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XVI</div>
+          <h2>Health and Safety Rules</h2>
+          <p>All employees are responsible for maintaining safe work environments. This includes:</p>
+          <ul>
+            <li>Reporting hazards, unsafe conditions, or near-miss incidents promptly</li>
+            <li>Following all safety protocols and emergency procedures</li>
+            <li>Participating in safety training as required</li>
+            <li>Not engaging in activities that compromise the safety of others</li>
+          </ul>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XVII. Use of Company Resources -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XVII</div>
+          <h2>Use of Company Resources</h2>
+          <p>Equipment, supplies, and company assets are the property of Forsys. Personal use, unauthorized transfer of assets, and use of company resources for political activities are prohibited. Employees are expected to use all resources responsibly and efficiently.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XVIII. Privacy, Confidentiality, Non-Disclosure -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XVIII</div>
+          <h2>Privacy, Confidentiality &amp; Non-Disclosure</h2>
+          <p>All employees are required to sign Non-Disclosure Agreements (NDAs). Strict protection is required for:</p>
+          <ul>
+            <li>Trade secrets and proprietary business information</li>
+            <li>Client data, contracts, and project details</li>
+            <li>Personnel records and compensation information</li>
+            <li>Any information designated as confidential by Forsys leadership</li>
+          </ul>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XIX. Immigration Law Compliance -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XIX</div>
+          <h2>Immigration Law Compliance</h2>
+          <p>Police verification and required document filing must be completed for all employees on international assignments. Forsys complies fully with the immigration laws of all countries in which we operate.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XX. Disciplinary Procedures -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XX</div>
+          <h2>Disciplinary Procedures</h2>
+          <p>Violations of this Code will result in progressive disciplinary action, which may include verbal warnings, written warnings, suspension without pay, or termination of employment. Immediate dismissal may occur for severe violations including fraud, harassment, or violence.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XXI. Code Compliance -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XXI</div>
+          <h2>Code Compliance</h2>
+          <p>All employees are expected to understand and comply with this Code of Conduct. Supervisors and managers bear additional responsibility for ensuring their teams understand and follow these guidelines.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XXII. Reporting Violations -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XXII</div>
+          <h2>Reporting Violations</h2>
+          <p>Employees must report any actual or perceived violations of this Code to HR. All reports will be treated with discretion and confidentiality. Non-retaliation protections apply to all good-faith reporters.</p>
+        </div>
+
+        <hr class="coc-divider">
+
+        <!-- XXIII. Zero-Tolerance Policy -->
+        <div class="coc-section">
+          <div class="coc-section-num">Section XXIII</div>
+          <h2>Zero-Tolerance Policy</h2>
+          <p>Violations of this Code may result in immediate employment termination. Retaliation against whistleblowers is treated as a severe violation and will be prosecuted to the fullest extent permitted by law.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer aria-label="Site footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">
+          <img src="../assets/images/Forsys_Logo.svg" alt="Forsys" class="nav-logo-img footer-logo-img" height="30" loading="lazy">
+        </a>
+        <p>AI Native. AI Fast. The Lead-to-Revenue transformation partner for modern enterprises.</p>
+      </div>
+      <div class="footer-col">
+        <h4>What We Do</h4>
+        <ul>
+          <li><a href="../services/revenue-lifecycle-strategy.html">Revenue Lifecycle Strategy</a></li>
+          <li><a href="../services/enterprise-ai-strategy.html">Enterprise AI Strategy</a></li>
+          <li><a href="../services/ai-application-development.html">AI Application Development</a></li>
+          <li><a href="../services/ai-enabled-managed-services.html">AI Managed Services</a></li>
+          <li><a href="../forsys-solutions/revramp.html">Forsys AI Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="../industries/hi-tech.html">Hi-Tech</a></li>
+          <li><a href="../industries/financial-services.html">Financial Services</a></li>
+          <li><a href="../industries/healthcare-life-sciences.html">Healthcare &amp; Life Sciences</a></li>
+          <li><a href="../industries/manufacturing.html">Manufacturing</a></li>
+          <li><a href="../industries/saas-subscription.html">SaaS &amp; Subscriptions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../resources/customer-stories.html">Customer Stories</a></li>
+          <li><a href="../resources/webinars-media.html">Webinars &amp; Events</a></li>
+          <li><a href="http://forsysinc.com/blog">Blogs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Forsys</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="culture.html">Culture</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Forsys Inc. All rights reserved. &nbsp;&middot;&nbsp; info@forsysinc.com</span>
+      <span class="footer-tagline">AI Native &middot; AI Fast &middot; Revenue Transformed</span>
+      <button class="policy-btn" aria-haspopup="true" aria-expanded="false">
+        Policy
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8l4-4 4 4"/></svg>
+        <div class="policy-dropup" role="menu">
+          <a href="privacy-policy.html" role="menuitem">Privacy Policy</a>
+          <a href="sustainability-policy.html" role="menuitem">Sustainability Policy</a>
+        </div>
+      </button>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
