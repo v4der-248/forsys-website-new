@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(python -m http.server 8080)",
-      "Bash(xargs sed *)"
+      "Bash(xargs sed *)",
+      "Bash(echo \"Exit: $?\")",
+      "WebFetch(domain:www.forsysinc.com)",
+      "Bash(python -c ' *)",
+      "Bash(node -e ' *)"
     ]
   }
 }
