@@ -385,3 +385,30 @@ if (document.querySelector('.js-accord')) {
     });
   })();
 }
+
+/* ── CUSTOMER STORIES FILTER ─────────────────────────────── */
+if (document.querySelector('.res-filter')) {
+  (function () {
+    const btns = document.querySelectorAll('.res-filter-btn');
+    const cards = document.querySelectorAll('.res-card[data-industry]');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        btns.forEach(b => { b.classList.remove('is-active'); b.removeAttribute('aria-current'); });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-current', 'true');
+
+        const filter = btn.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.industry === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  })();
+}

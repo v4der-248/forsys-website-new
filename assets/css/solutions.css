@@ -231,6 +231,7 @@
   background-clip: text;
   line-height: 1;
   margin-bottom: 4px;
+  display: block;
 }
 
 .sol-overview-stat-label {
@@ -398,7 +399,7 @@
 
 .sol-tech-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /*grid-template-columns: 1fr 1fr;*/
   gap: 64px;
   align-items: center;
   margin-top: 48px;
@@ -523,6 +524,7 @@
   background-clip: text;
   line-height: 1;
   margin-bottom: 8px;
+  display: block;
 }
 
 .sol-result-desc {
