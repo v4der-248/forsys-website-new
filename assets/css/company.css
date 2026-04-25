@@ -435,6 +435,10 @@
   margin-top: 48px;
 }
 
+.co-culture-grid--4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .co-culture-card {
   background: var(--bg);
   border: 1px solid var(--border);
@@ -744,6 +748,7 @@
 
 /* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .co-culture-grid--4col { grid-template-columns: repeat(2, 1fr); }
   .co-stats-grid  { grid-template-columns: repeat(3, 1fr); }
   .co-stat-item:nth-child(2) { border-right: none; }
   .co-stat-item:nth-child(1),

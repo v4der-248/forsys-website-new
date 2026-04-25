@@ -450,6 +450,11 @@
 
 .ind-casestudy-cta:hover { gap: 10px; }
 
+.ind-casestudy-left,
+.ind-casestudy-right {
+  min-width: 0;
+}
+
 .ind-casestudy-results {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -462,6 +467,8 @@
   border-radius: 12px;
   padding: 18px;
   text-align: center;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .ind-result-stat,
@@ -507,7 +514,10 @@
   .ind-approach-grid   { grid-template-columns: 1fr; }
   .ind-casestudy-card  { padding: 28px 20px; }
   .ind-client-logos    { gap: 28px; }
-  .ind-casestudy-results { grid-template-columns: 1fr 1fr; }
+  .ind-casestudy-results { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ind-result-item     { padding: 14px 8px; }
+  .ind-result-num,
+  .ind-result-stat     { font-size: clamp(15px, 4.2vw, 24px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
