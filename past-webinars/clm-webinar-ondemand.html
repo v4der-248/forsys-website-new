@@ -9,13 +9,6 @@
     content="Watch the on-demand recording of Forsys's webinar on Contract Performance Management powered by Conga CLM — reducing revenue leakage, ensuring compliance, and maximizing contract value.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://js.hsforms.net" crossorigin>
-  <link rel="dns-prefetch" href="https://js.hsforms.net">
-  <link rel="preconnect" href="https://forms.hubspot.com" crossorigin>
-  <link rel="dns-prefetch" href="https://forms.hubspot.com">
-  <link rel="preconnect" href="https://static.hsappstatic.net" crossorigin>
-  <link rel="dns-prefetch" href="https://static.hsappstatic.net">
-  <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js" async></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
@@ -25,110 +18,276 @@
     .vod-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(236, 238, 255, 0.88);
+      background: rgba(13, 13, 43, 0.55);
       z-index: 9000;
       display: flex;
       align-items: center;
       justify-content: center;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      padding: 24px;
     }
 
     .vod-form-box {
       background: #fff;
       border-radius: 24px;
-      padding: 64px 72px;
-      max-width: 900px;
-      width: calc(100% - 48px);
-      max-height: 92vh;
-      overflow-y: auto;
-      box-shadow: 0 32px 80px rgba(13, 13, 43, 0.18);
+      padding: 56px 72px 52px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 40px 100px rgba(13, 13, 43, 0.36);
       position: relative;
     }
 
-    .vod-form-box .hs-form-field label {
-      font-family: Inter, sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 6px;
-      display: block;
+    /* ── Form header ──────────────────────────────────────────────────────── */
+    .vod-form-header {
+      text-align: center;
+      margin-bottom: 44px;
     }
 
-    .vod-form-box .hs-input {
-      width: 100%;
-      border: none;
-      border-bottom: 1.5px solid #d0d3e8;
-      padding: 12px 0;
+    .vod-form-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f0ecff;
+      border: 1px solid rgba(107, 72, 255, 0.2);
+      color: #6b48ff;
+      font-family: Inter, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .vod-form-eyebrow svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .vod-form-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #0d0d2b;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .vod-form-sub {
       font-family: Inter, sans-serif;
       font-size: 0.95rem;
-      color: var(--text-primary);
-      background: transparent;
-      outline: none;
-      transition: border-color 0.2s;
+      color: #6b6f8e;
+      margin: 0;
+      line-height: 1.6;
     }
 
-    .vod-form-box .hs-input:focus { border-bottom-color: var(--purple); }
-    .vod-form-box .hs-input::placeholder { color: #adb1c9; }
-
-    .vod-form-box .form-columns-2 {
+    /* ── Form grid ──────────────────────────────────────────────────────── */
+    .vod-form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px 48px;
+      gap: 32px 40px;
       margin-bottom: 32px;
     }
 
-    .vod-form-box .form-columns-1 { margin-bottom: 32px; }
-    .vod-form-box .form-columns-0 { margin-bottom: 8px; }
+    .vod-form-grid.single {
+      grid-template-columns: 1fr;
+    }
 
-    .vod-form-box .hs-richtext h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
+    /* ── Individual field ───────────────────────────────────────────────── */
+    .vod-field {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .vod-field label {
+      font-family: Inter, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #0d0d2b;
+      margin-bottom: 8px;
+      letter-spacing: 0.01em;
+    }
+
+    .vod-field label .req {
+      color: #e53e3e;
+      margin-left: 2px;
+    }
+
+    .vod-field input {
+      font-family: Inter, sans-serif;
+      font-size: 1rem;
+      color: #0d0d2b;
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid #d0d3e8;
+      border-radius: 0;
+      padding: 10px 0;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      min-height: 44px;
+    }
+
+    .vod-field input::placeholder {
+      color: #b4b8d0;
+      font-weight: 400;
+    }
+
+    .vod-field input:focus {
+      border-bottom-color: #6b48ff;
+    }
+
+    .vod-field input.is-invalid {
+      border-bottom-color: #e53e3e;
+    }
+
+    .vod-field-error {
+      font-family: Inter, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: #e53e3e;
+      margin-top: 6px;
+      display: none;
+      line-height: 1.4;
+    }
+
+    .vod-field.show-error .vod-field-error {
+      display: block;
+    }
+
+    /* ── Actions ────────────────────────────────────────────────────────── */
+    .vod-form-actions {
       text-align: center;
-      margin-bottom: 36px;
+      margin-top: 8px;
     }
 
-    .vod-form-box .hs-submit { text-align: center; margin-top: 40px; }
-
-    .vod-form-box input.hs-button,
-    .vod-form-box input.hs-button.primary,
-    .vod-form-box input.hs-button.primary.large,
-    .vod-form-box .actions input[type="submit"] {
-      background: #6B48FF !important;
-      background-color: #6B48FF !important;
-      color: #fff !important;
-      border: none !important;
-      border-radius: 100px !important;
-      padding: 14px 48px !important;
-      font-family: Inter, sans-serif !important;
-      font-size: 1rem !important;
-      font-weight: 600 !important;
-      cursor: pointer !important;
-      transition: opacity 0.2s, transform 0.2s !important;
-      letter-spacing: 0.01em !important;
-      box-shadow: none !important;
-      outline: none !important;
-      min-width: 180px !important;
+    .vod-submit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #6b48ff;
+      color: #fff;
+      font-family: Inter, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 100px;
+      padding: 16px 56px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      min-width: 220px;
+      letter-spacing: 0.01em;
     }
 
-    .vod-form-box input.hs-button:hover,
-    .vod-form-box input.hs-button.primary:hover,
-    .vod-form-box .actions input[type="submit"]:hover {
-      opacity: 0.88 !important;
-      transform: translateY(-2px) !important;
+    .vod-submit-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
     }
 
-    .vod-form-box input.hs-button:focus-visible,
-    .vod-form-box .actions input[type="submit"]:focus-visible {
-      outline: 2px solid #6B48FF !important;
-      outline-offset: 2px !important;
+    .vod-submit-btn:focus-visible {
+      outline: 2px solid #6b48ff;
+      outline-offset: 3px;
     }
 
-    .vod-form-box .hs-error-msgs { list-style: none; padding: 0; margin: 4px 0 0; }
-    .vod-form-box .hs-error-msgs li label { font-size: 0.78rem; color: #e53e3e; font-weight: 500; }
-    .vod-form-box .hs-form-required { color: #e53e3e; margin-left: 2px; }
+    .vod-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .vod-btn-spinner {
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(255, 255, 255, 0.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: vod-spin 0.7s linear infinite;
+      display: none;
+      flex-shrink: 0;
+    }
+
+    .vod-submit-btn.loading .vod-btn-spinner {
+      display: block;
+    }
+
+    @keyframes vod-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .vod-api-error {
+      text-align: center;
+      font-family: Inter, sans-serif;
+      font-size: 0.875rem;
+      color: #e53e3e;
+      margin-top: 16px;
+      display: none;
+    }
+
+    .vod-api-error.visible {
+      display: block;
+    }
+
+    .vod-api-error a {
+      color: #6b48ff;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .vod-form-privacy {
+      text-align: center;
+      font-family: Inter, sans-serif;
+      font-size: 0.75rem;
+      color: #9da1b8;
+      margin-top: 16px;
+    }
+
+    /* ── Success panel ──────────────────────────────────────────────────── */
+    .vod-form-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0 8px;
+    }
+
+    .vod-form-success.visible {
+      display: block;
+    }
+
+    .vod-success-icon {
+      width: 72px;
+      height: 72px;
+      background: #f0ecff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .vod-success-icon svg {
+      width: 30px;
+      height: 30px;
+      color: #6b48ff;
+    }
+
+    .vod-success-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0d0d2b;
+      margin: 0 0 10px;
+    }
+
+    .vod-success-sub {
+      font-family: Inter, sans-serif;
+      font-size: 0.95rem;
+      color: #6b6f8e;
+      margin: 0;
+    }
 
     .vod-hero {
       background: var(--gradient-hero);
@@ -203,50 +362,6 @@
       margin: 0 auto;
     }
 
-    .vod-skeleton-wrap { padding: 8px 0; }
-
-    .vod-skeleton-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0d0d2b;
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .vod-skeleton-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px 32px;
-      margin-bottom: 20px;
-    }
-
-    .vod-skeleton-row.single { grid-template-columns: 1fr; }
-    .vod-skeleton-field { display: flex; flex-direction: column; gap: 8px; }
-
-    .vod-sk-label {
-      height: 12px; width: 60px;
-      background: #e8eaef; border-radius: 4px;
-      animation: vod-pulse 1.4s ease-in-out infinite;
-    }
-
-    .vod-sk-input {
-      height: 38px; background: #f0f1f7; border-radius: 6px;
-      animation: vod-pulse 1.4s ease-in-out infinite 0.1s;
-    }
-
-    .vod-sk-btn {
-      display: block; width: 160px; height: 44px;
-      background: #6b48ff; border-radius: 100px;
-      margin: 32px auto 0; opacity: 0.25;
-      animation: vod-pulse 1.4s ease-in-out infinite 0.2s;
-    }
-
-    @keyframes vod-pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.45; }
-    }
-
     .vod-section {
       background: var(--bg);
       padding: 64px 0 80px;
@@ -308,15 +423,18 @@
       .vod-hero { padding: calc(var(--nav-h) + 16px) 24px 100px; }
       .vod-hero-title { font-size: clamp(28px, 8vw, 44px); }
       .vod-hero-desc { font-size: 15px; }
-      .vod-form-box { padding: 32px 24px; }
-      .vod-form-box .form-columns-2 { grid-template-columns: 1fr; gap: 16px; }
+      .vod-form-box { padding: 40px 28px 36px; }
+      .vod-form-grid { grid-template-columns: 1fr; gap: 20px; }
+      .vod-form-grid.single { margin-bottom: 24px; }
+      .vod-form-title { font-size: 1.4rem; }
       .vod-container { padding: 0 20px; }
-      .vod-skeleton-row { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .vod-sk-label, .vod-sk-input, .vod-sk-btn { animation: none; }
-      .vod-play-btn, .vod-form-box, .vod-overlay { transition: none; }
+      .vod-btn-spinner { animation: none; }
+      .vod-submit-btn { transition: none; }
+      .vod-play-btn { transition: none; }
+      .vod-back-btn { transition: none; }
     }
   </style>
 </head>
@@ -325,26 +443,75 @@
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="vod-overlay" id="vod-overlay" aria-modal="true" role="dialog"
-    aria-label="Fill out this form to unlock and watch the on-demand webinar recording">
+  <div class="vod-overlay" id="vod-overlay" role="dialog" aria-modal="true" aria-labelledby="vod-form-title">
     <div class="vod-form-box">
-      <div id="hs-form-container">
-        <div class="vod-skeleton-wrap" id="vod-skeleton">
-          <div class="vod-skeleton-title">Fill the form to access the video</div>
-          <div class="vod-skeleton-row">
-            <div class="vod-skeleton-field"><div class="vod-sk-label"></div><div class="vod-sk-input"></div></div>
-            <div class="vod-skeleton-field"><div class="vod-sk-label"></div><div class="vod-sk-input"></div></div>
+
+      <p style="text-align:center;font-family:Inter,sans-serif;font-size:1.05rem;font-weight:600;color:#6b6f8e;margin:0 0 24px;">Fill in the required fields to watch the webinar</p>
+      <form id="vod-gate-form" novalidate autocomplete="on">
+
+        <div class="vod-form-grid">
+          <div class="vod-field" id="field-firstname">
+            <label for="vod-firstname">First Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="vod-firstname" name="firstname" placeholder="Jane"
+              autocomplete="given-name" required>
+            <span class="vod-field-error" role="alert">Please enter your first name.</span>
           </div>
-          <div class="vod-skeleton-row">
-            <div class="vod-skeleton-field"><div class="vod-sk-label"></div><div class="vod-sk-input"></div></div>
-            <div class="vod-skeleton-field"><div class="vod-sk-label"></div><div class="vod-sk-input"></div></div>
+          <div class="vod-field" id="field-lastname">
+            <label for="vod-lastname">Last Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="vod-lastname" name="lastname" placeholder="Smith"
+              autocomplete="family-name" required>
+            <span class="vod-field-error" role="alert">Please enter your last name.</span>
           </div>
-          <div class="vod-skeleton-row single">
-            <div class="vod-skeleton-field"><div class="vod-sk-label"></div><div class="vod-sk-input"></div></div>
-          </div>
-          <div class="vod-sk-btn"></div>
         </div>
+
+        <div class="vod-form-grid">
+          <div class="vod-field" id="field-email">
+            <label for="vod-email">Work Email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="vod-email" name="email" placeholder="jane@company.com"
+              autocomplete="email" required>
+            <span class="vod-field-error" role="alert">Please enter a valid work email address.</span>
+          </div>
+          <div class="vod-field" id="field-company">
+            <label for="vod-company">Company Name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="vod-company" name="company" placeholder="Acme Corp"
+              autocomplete="organization" required>
+            <span class="vod-field-error" role="alert">Please enter your company name.</span>
+          </div>
+        </div>
+
+        <div class="vod-form-grid single">
+          <div class="vod-field" id="field-jobtitle">
+            <label for="vod-jobtitle">Job Title <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="vod-jobtitle" name="jobtitle" placeholder="VP of Revenue Operations"
+              autocomplete="organization-title" required>
+            <span class="vod-field-error" role="alert">Please enter your job title.</span>
+          </div>
+        </div>
+
+        <div class="vod-form-actions">
+          <button type="submit" class="vod-submit-btn" id="vod-submit-btn">
+            <div class="vod-btn-spinner" aria-hidden="true"></div>
+            <span class="vod-btn-text">Watch the Webinar</span>
+          </button>
+          <p class="vod-api-error" id="vod-api-error" role="alert">
+            Something went wrong. Please try again or
+            <a href="mailto:marketing@forsysinc.com">contact us</a>.
+          </p>
+</div>
+
+      </form>
+
+      <!-- Success state (shown after submission) -->
+      <div class="vod-form-success" id="vod-form-success" aria-live="polite">
+        <div class="vod-success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+        </div>
+        <h2 class="vod-success-title">You&rsquo;re all set!</h2>
+        <p class="vod-success-sub">Loading your webinar recording&hellip;</p>
       </div>
+
     </div>
   </div>
 
@@ -639,7 +806,7 @@
       });
 
       function unlockVideo() {
-        var overlay = document.getElementById('vod-overlay');
+        var overlay      = document.getElementById('vod-overlay');
         var videoSection = document.getElementById('vod-video-section');
         if (overlay) overlay.style.display = 'none';
         if (videoSection) {
@@ -648,82 +815,106 @@
         }
       }
 
-      var hsFormLoaded = false;
-
-      window.hsFormsOnReady = window.hsFormsOnReady || [];
-      window.hsFormsOnReady.push(function () {
-        hsFormLoaded = true;
-        var skeleton = document.getElementById('vod-skeleton');
-        hbspt.forms.create({
-          region: 'na2',
-          portalId: '3988816',
-          formId: '2e8240f4-f59e-46f8-a322-d78f01bd8253',
-          target: '#hs-form-container',
-          onFormReady: function ($form) {
-            if (skeleton) skeleton.style.display = 'none';
-            var container = document.getElementById('hs-form-container');
-            if (!container) return;
-            var btn = container.querySelector('input.hs-button, input[type="submit"]');
-            if (btn) {
-              btn.style.setProperty('background', '#6B48FF', 'important');
-              btn.style.setProperty('background-color', '#6B48FF', 'important');
-              btn.style.setProperty('color', '#ffffff', 'important');
-              btn.style.setProperty('border', 'none', 'important');
-              btn.style.setProperty('border-radius', '100px', 'important');
-              btn.style.setProperty('padding', '14px 48px', 'important');
-              btn.style.setProperty('font-family', 'Inter, sans-serif', 'important');
-              btn.style.setProperty('font-size', '1rem', 'important');
-              btn.style.setProperty('font-weight', '600', 'important');
-              btn.style.setProperty('cursor', 'pointer', 'important');
-              btn.style.setProperty('min-width', '180px', 'important');
-              btn.style.setProperty('box-shadow', 'none', 'important');
-              btn.addEventListener('mouseover', function () { this.style.setProperty('opacity', '0.88', 'important'); });
-              btn.addEventListener('mouseout', function () { this.style.setProperty('opacity', '1', 'important'); });
-            }
-          },
-          onFormSubmit: function () {
-            setTimeout(unlockVideo, 1500);
-          },
-          onFormSubmitted: function () {
-            unlockVideo();
+      function validate(form) {
+        var ok = true;
+        form.querySelectorAll('input[required]').forEach(function (inp) {
+          var wrap     = inp.closest('.vod-field');
+          var empty    = inp.value.trim() === '';
+          var badEmail = inp.type === 'email' && !empty &&
+                         !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inp.value.trim());
+          if (empty || badEmail) {
+            wrap.classList.add('show-error');
+            inp.classList.add('is-invalid');
+            ok = false;
+          } else {
+            wrap.classList.remove('show-error');
+            inp.classList.remove('is-invalid');
           }
         });
-      });
+        return ok;
+      }
 
-      setTimeout(function () {
-        if (hsFormLoaded) return;
-        var skeleton = document.getElementById('vod-skeleton');
-        var container = document.getElementById('hs-form-container');
-        if (!skeleton || !container) return;
-        skeleton.style.display = 'none';
-        var msg = document.createElement('div');
-        msg.style.cssText = 'text-align:center;padding:24px 0;font-family:Inter,sans-serif;';
-        msg.innerHTML =
-          '<p style="color:#0d0d2b;font-size:1rem;margin:0 0 16px">Having trouble loading the form?</p>' +
-          '<a href="mailto:marketing@forsysinc.com?subject=CLM%20Webinar%20On-Demand%20Access"' +
-          ' style="display:inline-block;background:#6b48ff;color:#fff;font-weight:600;' +
-          'padding:12px 28px;border-radius:100px;text-decoration:none;font-size:0.95rem;">' +
-          'Request Access via Email</a>';
-        container.appendChild(msg);
-      }, 10000);
+      document.addEventListener('DOMContentLoaded', function () {
+        var form        = document.getElementById('vod-gate-form');
+        var btn         = document.getElementById('vod-submit-btn');
+        var btnText     = btn ? btn.querySelector('.vod-btn-text') : null;
+        var apiError    = document.getElementById('vod-api-error');
+        var successPanel = document.getElementById('vod-form-success');
 
-      document.addEventListener('keydown', function (e) {
-        var overlay = document.getElementById('vod-overlay');
-        if (!overlay || overlay.style.display === 'none') return;
-        if (e.key === 'Escape') e.preventDefault();
-        var focusable = overlay.querySelectorAll(
-          'input, select, textarea, button, [tabindex]:not([tabindex="-1"])'
-        );
-        if (!focusable.length) return;
-        var first = focusable[0];
-        var last = focusable[focusable.length - 1];
-        if (e.key === 'Tab') {
-          if (e.shiftKey) {
-            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-          } else {
-            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        if (!form) return;
+
+        form.querySelectorAll('input').forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            if (inp.value.trim()) {
+              inp.closest('.vod-field').classList.remove('show-error');
+              inp.classList.remove('is-invalid');
+            }
+          });
+        });
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (apiError) apiError.classList.remove('visible');
+
+          if (!validate(form)) {
+            var first = form.querySelector('.is-invalid');
+            if (first) first.focus();
+            return;
           }
-        }
+
+          btn.disabled = true;
+          btn.classList.add('loading');
+          if (btnText) btnText.textContent = 'Submitting…';
+
+          var payload = {
+            submittedAt: Date.now(),
+            fields: [
+              { objectTypeId: '0-1', name: 'firstname', value: form.querySelector('[name="firstname"]').value.trim() },
+              { objectTypeId: '0-1', name: 'lastname',  value: form.querySelector('[name="lastname"]').value.trim() },
+              { objectTypeId: '0-1', name: 'email',     value: form.querySelector('[name="email"]').value.trim() },
+              { objectTypeId: '0-1', name: 'company',   value: form.querySelector('[name="company"]').value.trim() },
+              { objectTypeId: '0-1', name: 'jobtitle',  value: form.querySelector('[name="jobtitle"]').value.trim() }
+            ],
+            context: {
+              pageUri:  window.location.href,
+              pageName: document.title
+            }
+          };
+
+          fetch('https://api.hsforms.com/submissions/v3/integration/submit/3988816/2e8240f4-f59e-46f8-a322-d78f01bd8253', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(payload)
+          })
+          .then(function (res) {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+          })
+          .then(function () {
+            form.style.display = 'none';
+            if (successPanel) successPanel.classList.add('visible');
+            setTimeout(unlockVideo, 1800);
+          })
+          .catch(function () {
+            btn.disabled = false;
+            btn.classList.remove('loading');
+            if (btnText) btnText.textContent = 'Watch the Webinar';
+            if (apiError) apiError.classList.add('visible');
+          });
+        });
+
+        document.addEventListener('keydown', function (e) {
+          var overlay = document.getElementById('vod-overlay');
+          if (!overlay || overlay.style.display === 'none') return;
+          if (e.key === 'Escape') e.preventDefault();
+          var focusable = overlay.querySelectorAll('input, button, a[href], [tabindex]:not([tabindex="-1"])');
+          if (!focusable.length) return;
+          var first = focusable[0], last = focusable[focusable.length - 1];
+          if (e.key === 'Tab') {
+            if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+            else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+          }
+        });
       });
     })();
   </script>

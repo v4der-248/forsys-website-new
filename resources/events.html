@@ -638,6 +638,13 @@
       background-clip: text;
     }
 
+    .evt-past-item-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
     .evt-past-item-arrow {
       width: 18px;
       height: 18px;
@@ -679,6 +686,53 @@
       background: #000;
     }
 
+    .evt-video-facade-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      background: #000;
+      cursor: pointer;
+    }
+
+    .evt-video-facade-wrap .evt-past-video {
+      margin-bottom: 0;
+      border-radius: 0;
+      display: block;
+      width: 100%;
+    }
+
+    .evt-video-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(13, 13, 43, 0.28);
+      transition: background 0.2s;
+    }
+
+    .evt-video-facade-wrap:hover .evt-video-play-overlay {
+      background: rgba(107, 72, 255, 0.45);
+    }
+
+    .evt-video-play-overlay svg {
+      width: 64px;
+      height: 64px;
+      color: #fff;
+      filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+    }
+
+    .evt-video-facade-wrap.playing .evt-video-play-overlay {
+      display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .evt-video-play-overlay {
+        transition: none;
+      }
+    }
+
     .evt-past-detail-title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.3rem;
@@ -694,11 +748,11 @@
       transition: opacity 0.2s;
     }
 
-    .evt-past-detail-title:hover {
+    a.evt-past-detail-title:hover {
       opacity: 0.75;
     }
 
-    .evt-past-detail-title:focus-visible {
+    a.evt-past-detail-title:focus-visible {
       outline: 2px solid var(--purple);
       outline-offset: 2px;
     }
@@ -941,6 +995,10 @@
       flex-wrap: wrap;
     }
 
+    .evt-video-callout .evt-vod-btn {
+      margin-top: 0;
+    }
+
     .evt-video-callout-text {
       flex: 1;
       min-width: 200px;
@@ -950,6 +1008,18 @@
       color: var(--text-primary);
       line-height: 1.5;
       margin: 0;
+    }
+
+    /* ── Body inline links ────────────────────────────────────────────── */
+    .evt-past-detail-body a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .evt-past-detail-body a:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
 
     /* ── Press Links ──────────────────────────────────────────────────── */
@@ -979,8 +1049,7 @@
       font-family: Inter, sans-serif;
       font-size: 0.875rem;
       color: var(--purple);
-      text-decoration: underline;
-      text-underline-offset: 2px;
+      text-decoration: none;
       word-break: break-word;
       transition: color 0.15s;
     }
@@ -1486,8 +1555,9 @@
 
             <div class="evt-past-item" role="listitem" tabindex="0" data-panel="evt-2" aria-selected="false">
               <div class="evt-past-item-left">
-                <p class="evt-past-item-title">Webinar: Salesforce Spiff &#8211; Modern Approach to Sales Compensation
-                  Management</p>
+                <p class="evt-past-item-title">Webinar: Salesforce Spiff &#8211; Explore a Modern Approach to Sales
+                  Compensation
+                  Management with Salesforce and Forsys</p>
                 <span class="evt-past-item-date">Nov 6, 2025</span>
               </div>
               <svg class="evt-past-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -1524,9 +1594,9 @@
 
             <div class="evt-past-item" role="listitem" tabindex="0" data-panel="evt-5" aria-selected="false">
               <div class="evt-past-item-left">
-                <p class="evt-past-item-title">Apprise: AI in Enterprise &#8211; Scaling AI Solutions Across Healthcare
-                  Systems</p>
-                <span class="evt-past-item-date">Feb 27, 2025</span>
+                <img src="https://www.forsysinc.com/blog/wp-content/uploads/2025/03/Apprise-Event-page-thumbnail.png"
+                  alt="Apprise: AI in Enterprise – Scaling AI Solutions Across Healthcare Systems"
+                  class="evt-past-item-img" loading="lazy">
               </div>
               <svg class="evt-past-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                 aria-hidden="true">
@@ -1611,7 +1681,7 @@
 
             <div class="evt-past-item" role="listitem" tabindex="0" data-panel="evt-12" aria-selected="false">
               <div class="evt-past-item-left">
-                <p class="evt-past-item-title">Webinar: Integrations in the Lead-to-Revenue Space &#8211; Revenue Cloud
+                <p class="evt-past-item-title">Webinar: Integrations in the Lead-to-Revenue(LTR) Space: Revenue Cloud
                   Integration With NetSuite</p>
                 <span class="evt-past-item-date">Apr 11, 2024</span>
               </div>
@@ -1720,7 +1790,7 @@
 
             <div class="evt-past-item" role="listitem" tabindex="0" data-panel="evt-21" aria-selected="false">
               <div class="evt-past-item-left">
-                <p class="evt-past-item-title">NetSuite Webinar: Why Add PSA Solutions to Your ERP?</p>
+                <p class="evt-past-item-title">Webinar: Why Add Proffesional Services Solutions to Your ERP?</p>
                 <span class="evt-past-item-date">Mar 3, 2022</span>
               </div>
               <svg class="evt-past-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -1826,9 +1896,8 @@
             <div class="evt-past-panel active" id="evt-0">
               <img src="https://www.forsysinc.com/blog/wp-content/uploads/2026/03/rev3-zoom-banner-3.jpg"
                 alt="Rev 3.0 Webinar" class="evt-past-thumb" loading="lazy">
-              <a href="../past-webinars/rev30-webinar-ondemand.html" class="evt-past-detail-title">Webinar: Rev 3.0
-                &#8211;
-                From Complex Configuration to Autonomous Revenue with Salesforce Agentforce Revenue Management</a>
+              <span class="evt-past-detail-title">Webinar: Rev 3.0 &#8211; From Complex Configuration to Autonomous
+                Revenue with Salesforce Agentforce Revenue Management</span>
               <div class="evt-past-detail-meta">Mar 25, 2026 &nbsp;|&nbsp; Virtual Event</div>
               <div class="evt-past-detail-body">
                 <p>Watch the on-demand recording of our webinar, where Salesforce and Forsys experts explore how modern
@@ -1851,17 +1920,32 @@
             <div class="evt-past-panel" id="evt-1">
               <img src="https://www.forsysinc.com/blog/wp-content/uploads/2026/02/Webinar-make-the-move-1.png"
                 alt="Make the Move from CPQ to Agentforce Revenue Management" class="evt-past-thumb" loading="lazy">
-              <a href="../past-webinars/revramp-salesforce-webinar-ondemand.html" class="evt-past-detail-title">Make the
-                Move from CPQ to Agentforce Revenue Management</a>
-              <div class="evt-past-detail-meta">Jan 21, 2026 &nbsp;|&nbsp; Virtual Event &nbsp;|&nbsp; 9:00 AM &#8211;
-                10:30 AM PST</div>
+              <span class="evt-past-detail-title">Webinar: Make the Move from CPQ to Agentforce Revenue
+                Management</span>
+              <div class="evt-past-detail-meta">Jan 21, 2026 &nbsp;|&nbsp; Virtual Event
+              </div>
               <div class="evt-past-detail-body">
-                <p>Revenue leaders explore why enterprises are transitioning beyond traditional CPQ to
-                  <strong>Agentforce Revenue Management</strong>. Features the Forsys RevRamp solution for seamless
-                  migration with full visibility.
+                <p>Watch the on-demand recording of our webinar, where revenue, product & business leaders explain why
+                  enterprises are moving beyond traditional <strong>CPQ to Agentforce Revenue Management</strong>.
                 </p>
-                <p><strong>Muthu Murugan</strong>, Senior Director of Product Management, Salesforce
-                  &nbsp;&middot;&nbsp; <strong>Smita Katariya</strong>, GVP &#8211; Business Applications, Colibri Group
+                <p> A key highlight of the webinar was the <strong>Forsys RevRamp solution,</strong> designed to help
+                  enterprises
+                  seamlessly
+                  transition from CPQ to Agentforce Revenue Management. RevRamp provides full visibility into the
+                  existing
+                  CPQ landscape and enables structured, confident, time- and cost-efficient transitions at enterprise
+                  scale.
+                </p>
+                <p> The session included insights from <strong>Muthu Murugan, Senior Director of Product Management at
+                    Salesforce,</strong>
+                  who shared perspectives on the evolution from CPQ to Agentforce Revenue Management and the platform
+                  capabilities enabling modern revenue organizations.
+                </p>
+                <p>Bringing a real-world enterprise story to the forefront, our customer <strong>Smita Katariya, GVP –
+                    Business
+                    Applications at Colibri Group,</strong> shared her perspective on navigating revenue transformation
+                  within her
+                  organization.
                 </p>
               </div>
             </div>
@@ -1871,12 +1955,15 @@
               <img
                 src="https://www.forsysinc.com/blog/wp-content/uploads/2025/11/afa160bd-27c5-4f7c-b580-476d7f678729.png"
                 alt="Salesforce Spiff Webinar" class="evt-past-thumb" loading="lazy">
-              <a href="../past-webinars/spiff-webinar-ondemand.html" class="evt-past-detail-title">Webinar: Salesforce
-                Spiff &#8211; Modern Approach to Sales Compensation Management</a>
-              <div class="evt-past-detail-meta">Nov 6, 2025 &nbsp;|&nbsp; Virtual Event</div>
+              <span class="evt-past-detail-title">Webinar: Salesforce Spiff &#8211; Modern Approach to Sales
+                Compensation Management</span>
+              <div class="evt-past-detail-meta">Nov 6, 2025</div>
               <div class="evt-past-detail-body">
-                <p>Watch how modern businesses simplify compensation management, increase sales motivation, and drive
-                  faster revenue outcomes through <strong>Salesforce Spiff</strong>.</p>
+                <p><strong> Access our on-demand webinar for insightful session with Salesforce and Forsys experts as
+                    they reveal
+                    how modern businesses are using Spiff to simplify compensation, increase motivation, and drive
+                    faster
+                    revenue outcomes.</strong></p>
               </div>
             </div>
 
@@ -1884,12 +1971,15 @@
             <div class="evt-past-panel" id="evt-3">
               <img src="https://www.forsysinc.com/blog/wp-content/uploads/2025/09/webinar.png"
                 alt="Contract Performance Management with Conga CLM Webinar" class="evt-past-thumb" loading="lazy">
-              <a href="../past-webinars/clm-webinar-ondemand.html" class="evt-past-detail-title">Webinar: Contract
-                Performance Management &#8211; Driving Performance, Compliance &amp; Value with Conga CLM</a>
-              <div class="evt-past-detail-meta">Sep 25, 2025 &nbsp;|&nbsp; Virtual Event</div>
+              <span class="evt-past-detail-title">Webinar: Contract Performance Management &#8211; Driving Performance,
+                Compliance &amp; Value with Conga CLM</span>
+              <div class="evt-past-detail-meta">Sep 25, 2025</div>
               <div class="evt-past-detail-body">
-                <p>Explore how Contract Performance Management powered by <strong>Conga CLM</strong> reduces revenue
-                  leakage, ensures compliance, and maximizes contract value across the full contract lifecycle.</p>
+                <p><strong>Access our on-demand webinar to explore how Contract Performance Management (CPM) powered by
+                    Conga CLM
+                    turns agreements into engines of performance and trust. Learn how leading organizations are reducing
+                    revenue leakage, ensuring compliance, and maximizing contract value with greater visibility and
+                    control.</strong></p>
               </div>
             </div>
 
@@ -1898,12 +1988,13 @@
               <img
                 src="https://www.forsysinc.com/blog/wp-content/uploads/2025/03/Salesforce-Forsys-Pharma-Webinar-V1.png"
                 alt="Pharma Field Sales Operations Webinar" class="evt-past-thumb" loading="lazy">
-              <a href="../past-webinars/pharma-webinar-ondemand.html" class="evt-past-detail-title">Webinar: Bringing
-                Efficiency to Pharma Field Sales Operations</a>
-              <div class="evt-past-detail-meta">Mar 25, 2025 &nbsp;|&nbsp; Virtual Event</div>
+              <span class="evt-past-detail-title">Webinar: Bringing Efficiency to Pharma Field Sales Operations</span>
+              <div class="evt-past-detail-meta">Mar 25, 2025</div>
               <div class="evt-past-detail-body">
-                <p>A deep dive into Forsys&#8217; Pharma Mobile App powered by Salesforce, transforming pharma field
-                  sales with data-driven insights, real-time updates, and seamless automation.</p>
+                <p><strong>Access our on-demand webinar for a deep dive into the functionality of Forsys’ Pharma Mobile
+                    App,
+                    powered by Salesforce. Discover how it’s transforming pharma field sales with data-driven insights,
+                    real-time updates, and seamless automation.</strong></p>
               </div>
             </div>
 
@@ -1913,16 +2004,24 @@
                 src="https://www.forsysinc.com/blog/wp-content/uploads/2025/03/Apprise-Event-page-Scaling-AI-Solutions-Across-Healthcare-Systems.png"
                 alt="Apprise 2nd Edition: Scaling AI Solutions Across Healthcare Systems" class="evt-past-thumb"
                 loading="lazy">
-              <a href="../past-webinars/apprise-healthcare-ondemand.html" class="evt-past-detail-title">Apprise: AI in
-                Enterprise &#8211; Scaling AI Solutions Across Healthcare Systems</a>
-              <div class="evt-past-detail-meta">Feb 27, 2025 &nbsp;|&nbsp; Stanford University Faculty Club, California
+              <span class="evt-past-detail-title">Apprise: AI in Enterprise &#8211; Scaling AI Solutions Across
+                Healthcare Systems</span>
+              <div class="evt-past-detail-meta">Feb 27, 2025 &nbsp;|&nbsp; California
               </div>
               <div class="evt-past-detail-body">
-                <p>The second edition of Apprise brought together AI and healthcare leaders to explore artificial
-                  intelligence&#8217;s impact on patient care, operations, and medical innovation.</p>
-                <p><strong>Dr. Anurag Mairal</strong>, Stanford University &nbsp;&middot;&nbsp; <strong>Shilpa Tangi
-                    Green</strong>, Gilead Sciences &nbsp;&middot;&nbsp; <strong>Parag Jain</strong>, Picarro
-                  &nbsp;&middot;&nbsp; <strong>Neda Razavi</strong>, iSono Health</p>
+
+                <p><strong>Experience the highlights from the 2nd edition of Apprise - AI in Enterprise, where AI and
+                    healthcare leaders converged at the Stanford University Faculty Club to explore the game-changing
+                    impact of artificial intelligence on the industry.</strong></p>
+                <p> This exclusive gathering sparked in-depth discussions on how AI is reshaping patient care,
+                  optimizing
+                  operations, and accelerating medical innovation, featuring insights from distinguished speakers like
+                  Dr.
+                  Anurag Mairal (Stanford University), Divya Yerraguntla, Shilpa Tangi Green (Gilead Sciences), Parag
+                  Jain
+                  (Picarro), and Neda Razavi (iSono Health).</p>
+                <p>Dive into our event recap video for key insights and discover how AI is setting new benchmarks in
+                  healthcare innovation.</p>
               </div>
             </div>
 
@@ -1931,12 +2030,14 @@
               <img
                 src="https://www.forsysinc.com/blog/wp-content/uploads/2025/01/Event-page-Webinar-Salesforces-Agentforce.png"
                 alt="Salesforce Agentforce AI Advantage Webinar" class="evt-past-thumb" loading="lazy">
-              <a href="../past-webinars/agentforce-webinar-ondemand.html" class="evt-past-detail-title">Webinar:
-                Salesforce&#8217;s Agentforce &#8211; The AI Advantage Businesses Shouldn&#8217;t Miss</a>
-              <div class="evt-past-detail-meta">Jan 16, 2025 &nbsp;|&nbsp; Virtual Event</div>
+              <span class="evt-past-detail-title">Webinar: Salesforce&#8217;s Agentforce &#8211; The AI Advantage
+                Businesses Shouldn&#8217;t Miss</span>
+              <div class="evt-past-detail-meta">Jan 16, 2025</div>
               <div class="evt-past-detail-body">
-                <p>A live demonstration of Agentforce capabilities showing how AI is setting new standards for business
-                  growth &#8212; from autonomous agents to intelligent revenue workflows.</p>
+                <p><strong>Watch our on-demand webinar to see Salesforce’s Agentforce in action. Discover how Agentforce
+                    is setting
+                    new standards for business growth by leveraging the power of AI.</strong>
+                <p>
               </div>
             </div>
 
@@ -1944,16 +2045,20 @@
             <div class="evt-past-panel" id="evt-7">
               <img src="https://www.forsysinc.com/blog/wp-content/uploads/2024/11/Apprise-Event-page-1.png"
                 alt="Apprise: Pricing Strategies and AI" class="evt-past-thumb" loading="lazy">
-              <a href="../past-webinars/apprise-pricing-ondemand.html" class="evt-past-detail-title">Apprise &#8211;
-                Pricing Strategies &amp; AI</a>
-              <div class="evt-past-detail-meta">Oct 24, 2024 &nbsp;|&nbsp; Stanford University Faculty Club, California
+              <span class="evt-past-detail-title">Apprise &#8211; Pricing Strategies &amp; AI</span>
+              <div class="evt-past-detail-meta">Oct 24, 2024 &nbsp;|&nbsp; California
               </div>
               <div class="evt-past-detail-body">
-                <p>The inaugural Apprise event explored AI&#8217;s impact on pricing strategies and Lead-to-Revenue
-                  processes, featuring industry leaders from Salesforce, Cisco, Hitachi Vantara, and Nokia.</p>
-                <p><strong>Meredith Schmidt</strong>, Salesforce &nbsp;&middot;&nbsp; <strong>Jigna Shah</strong>, Cisco
-                  &nbsp;&middot;&nbsp; <strong>Marika Sykora</strong>, Harmonic Inc. &nbsp;&middot;&nbsp; <strong>Ashish
-                    Bhagat</strong>, Hitachi Vantara &nbsp;&middot;&nbsp; <strong>Irina Starikova</strong>, Nokia</p>
+                <p><strong> Explore the breakthrough insights from our inaugural Apprise - AI in Enterprise event!
+                    Hosted at the
+                    prestigious Stanford University Faculty Club, this exclusive gathering brought together industry
+                    trailblazers to discuss the evolving impact of AI on pricing strategies and Lead-to-Revenue (L2R)
+                    processes in today’s enterprises.</strong></p>
+                <p>Featuring thought-provoking sessions led by experts such as Meredith Schmidt (Salesforce), Jigna Shah
+                  (Cisco), Marika Sykora (Harmonic Inc.), Ashish Bhagat (Hitachi Vantara), and Irina Starikova (Nokia),
+                  the event fostered a powerful dialogue on how AI is shaping the future of business operations.</p>
+                <p>Dive into our event recap video to discover key takeaways and explore how AI-driven strategies are
+                  setting new benchmarks in the enterprise landscape.</p>
               </div>
             </div>
 
@@ -1962,11 +2067,12 @@
               <img src="https://www.forsysinc.com/blog/wp-content/uploads/2024/09/Dreamforce-Past-Event-1.png"
                 alt="Dreamforce 2024" class="evt-past-thumb" loading="lazy">
               <span class="evt-past-detail-title">Dreamforce 2024</span>
-              <div class="evt-past-detail-meta">Sep 17&#8211;19, 2024 &nbsp;|&nbsp; San Francisco, CA</div>
+              <div class="evt-past-detail-meta">Sep 17&#8211;19, 2024 &nbsp;|&nbsp; San Francisco</div>
               <div class="evt-past-detail-body">
-                <p>Forsys attended Dreamforce 2024, winning the <strong>Top Performer Award for H1 2024
-                    (India)</strong>, announcing the first New Revenue Cloud implementation going live, and reaffirming
-                  commitment to AI-driven business transformation.</p>
+                <p>At Dreamforce 2024, Forsys won the Top Performer Award for H1 2024 - India, announced its first New
+                  Revenue Cloud implementation going live, and reaffirmed its commitment to transforming businesses,
+                  enabling seamless migrations from Old Revenue Cloud/Steelbrick, and expanding its efforts in industry
+                  cloud-focused solutions.</p>
               </div>
             </div>
 
@@ -1974,13 +2080,12 @@
             <div class="evt-past-panel" id="evt-9">
               <img src="https://www.forsysinc.com/blog/wp-content/uploads/2024/08/Event-Webinar.png"
                 alt="Optimizing Manufacturing Processes Webinar" class="evt-past-thumb" loading="lazy">
-              <a href="../past-webinars/manufacturing-webinar-ondemand.html" class="evt-past-detail-title">Webinar:
-                Optimizing Manufacturing Processes Through Salesforce Digital Solutions</a>
-              <div class="evt-past-detail-meta">Jul 26, 2024 &nbsp;|&nbsp; Virtual Event</div>
+              <span class="evt-past-detail-title">Webinar: Optimizing Manufacturing Processes Through Salesforce Digital
+                Solutions</span>
+              <div class="evt-past-detail-meta">Jul 26, 2024 &nbsp;</div>
               <div class="evt-past-detail-body">
-                <p>Showcasing Forsys&#8217; tailored Salesforce solution enhancing manufacturing efficiency through
-                  <strong>Rise for Manufacturing</strong> &#8212; connecting operations, planning, and customer
-                  commitments.
+                <p>See 'Rise for Manufacturing' in Action: On-Demand Webinar Available. Learn how our tailored
+                  Salesforce solution enhances efficiency in manufacturing processes.
                 </p>
               </div>
             </div>
@@ -1991,11 +2096,12 @@
                 src="https://www.forsysinc.com/blog/wp-content/uploads/2024/07/Forsys-at-Salesforce-World-Tour-Essentials-Mumbai-Post-Event.png"
                 alt="Salesforce World Tour Essentials India 2024" class="evt-past-thumb" loading="lazy">
               <span class="evt-past-detail-title">Salesforce World Tour Essentials India 2024</span>
-              <div class="evt-past-detail-meta">Jun 19, 2024 &nbsp;|&nbsp; India</div>
+              <div class="evt-past-detail-meta">Jun 19, 2024</div>
               <div class="evt-past-detail-body">
-                <p>Forsys demonstrated advanced Salesforce solutions at the Salesforce World Tour India event,
-                  highlighting digital advancements to help businesses deepen customer relationships and increase
-                  productivity.</p>
+                <p>At the Salesforce World Tour Essentials India 2024, Forsys demonstrated the game-changing potential
+                  of its advanced Salesforce solutions. We further spotlighted our innovation-driven approach, powered
+                  by digital advancements, in our market offerings to ensure businesses deepen customer relationships,
+                  increase productivity, and grow their bottom line.</p>
               </div>
             </div>
 
@@ -2004,13 +2110,21 @@
               <img src="https://www.forsysinc.com/blog/wp-content/uploads/2024/04/Forsys-at-Conga-Connect-2024.png"
                 alt="Forsys at Conga Connect 24" class="evt-past-thumb" loading="lazy">
               <span class="evt-past-detail-title">Forsys at Conga Connect &#8217;24</span>
-              <div class="evt-past-detail-meta">Apr 22&#8211;24, 2024 &nbsp;|&nbsp; In-Person Event</div>
+              <div class="evt-past-detail-meta">Apr 22&#8211;24, 2024</div>
               <div class="evt-past-detail-body">
-                <p>Forsys engaged with industry leaders at Conga Connect &#8217;24, exploring the Conga Platform&#8217;s
-                  transformative impact on revenue processes.</p>
-                <p><strong>Srinivas Vemuri</strong>, COO, Forsys &nbsp;&middot;&nbsp; <strong>Ashish Bhagat</strong>,
-                  COO, Hitachi Vantara &nbsp;&middot;&nbsp; <strong>Scott Batchelor</strong>, Senior Director of Global
-                  Partner &amp; Alliances Marketing, Conga</p>
+                <p>Forsys attended the Conga Connect 2024 event, where we engaged with industry leaders and showcased
+                  our capabilities. During the event, we explored the transformative impact of the Conga Platform on
+                  revenue processes. Conga is a unified platform with Functional Parity, robust APIs & Web UI, and Cloud
+                  agnosticism.</p>
+                <p>Our COO, Srinivas Vemuri, along with Ashish Bhagat, COO of Hitachi Vantara, and Scott Batchelor,
+                  Conga’s Senior Director of Global Partner, and Alliances Marketing, led insightful discussions on how
+                  the Conga Platform is revolutionizing partnerships and business strategies.</p>
+                <p>For more insights and details from the event, follow our discussion on LinkedIn: <a
+                    href="https://www.linkedin.com/posts/forsysinc_srinivas-vemuri-coo-forsys-inc-ashish-bhagat-activity-7188942679630610432-qrIx?utm_source=share&utm_medium=member_desktop"
+                    target="_blank" rel="noopener noreferrer">Event
+                    Highlights
+                    on
+                    LinkedIn</a></p>
               </div>
             </div>
 
@@ -2018,12 +2132,14 @@
             <div class="evt-past-panel" id="evt-12">
               <img src="https://www.forsysinc.com/blog/wp-content/uploads/2024/04/Website-Data-Integration-Webinar.png"
                 alt="Integrations in Lead-to-Revenue Space Webinar" class="evt-past-thumb" loading="lazy">
-              <a href="../past-webinars/integrations-webinar-ondemand.html" class="evt-past-detail-title">Webinar:
-                Integrations in the Lead-to-Revenue Space &#8211; Revenue Cloud Integration With NetSuite</a>
-              <div class="evt-past-detail-meta">Apr 11, 2024 &nbsp;|&nbsp; Virtual Event</div>
+              <span class="evt-past-detail-title">Webinar: Integrations in the Lead-to-Revenue(LTR) Space: Revenue
+                Cloud Integration With NetSuite</span>
+              <div class="evt-past-detail-meta">Apr 11, 2024</div>
               <div class="evt-past-detail-body">
-                <p>A demonstration of seamless integrations showcasing Forsys&#8217; end-to-end integration capabilities
-                  synchronizing Salesforce Revenue Cloud with NetSuite to streamline Lead-to-Revenue business processes.
+                <p>Explore how integrating Revenue Cloud with NetSuite boosts the lead-to-revenue cycle of businesses.
+                  Learn about seamless integrations, effective approaches, and transformative impacts through a live
+                  demo, showcasing Forsys' E2E integration capabilities to synchronize and optimize business processes
+                  effectively.
                 </p>
               </div>
             </div>
@@ -2033,13 +2149,13 @@
               <img src="https://www.forsysinc.com/blog/wp-content/uploads/2024/03/Event-New-Office-1.png"
                 alt="Forsys New Office Inauguration Hyderabad" class="evt-past-thumb" loading="lazy">
               <span class="evt-past-detail-title">Forsys Inc Inaugurates State of the Art Facility in Hyderabad</span>
-              <div class="evt-past-detail-meta">Feb 29, 2024 &nbsp;|&nbsp; Nanakramguda, Hyderabad, India</div>
+              <div class="evt-past-detail-meta">Feb 29, 2024 &nbsp;|&nbsp;</div>
               <div class="evt-past-detail-body">
                 <p>Forsys unveiled its brand new, advanced office space in Nanakramguda, Hyderabad, at a grand ceremony
-                  attended by key luminaries such as the <strong>Minister for Industries and IT D. Sridhar
-                    Babu</strong>, <strong>U.S. Consul-General Jennifer Larson</strong>, <strong>Chairman of iLabs Group
-                    Srinivasa Raju</strong>, Prominent Cardiothoracic Surgeon and <strong>Star Hospitals MD Gopichand
-                    Mannam</strong>.</p>
+                  attended by key luminaries such as the Minister for Industries and IT D. Sridhar
+                  Babu, U.S. Consul-General Jennifer Larson, Chairman of iLabs Group
+                  Srinivasa Raju, Prominent Cardiothoracic Surgeon and Star Hospitals MD Gopichand
+                  Mannam.</p>
                 <p>This milestone emphasizes Forsys&#8217; commitment to enhancing its presence in India and
                   contributing to the dynamic tech ecosystem. The office is designed with state-of-the-art architecture
                   and modern amenities, reflecting Forsys&#8217; ethos of fostering innovation and collaboration,
@@ -2066,26 +2182,41 @@
                   <ul class="evt-press-links-list">
                     <li><a
                         href="https://newsmeter.in/business/hyderabad-forsys-opens-rs-17-crores-worth-new-office-creates-employment-725606"
-                        target="_blank" rel="noopener">newsmeter.in &mdash; Forsys opens Rs 17 crores worth new office,
-                        creates employment</a></li>
+                        target="_blank"
+                        rel="noopener">https://newsmeter.in/business/hyderabad-forsys-opens-rs-17-crores-worth-new-office-creates-employment-725606</a>
+                    </li>
                     <li><a
                         href="https://bnnbreaking.com/finance-nav/business/forsys-inc-expands-hyderabad-operations-new-21000-sqft-office-plans-for-500-more-hires-by-2026"
-                        target="_blank" rel="noopener">bnnbreaking.com &mdash; Forsys expands Hyderabad operations with
-                        new 21,000 sqft office</a></li>
+                        target="_blank"
+                        rel="noopener">https://bnnbreaking.com/finance-nav/business/forsys-inc-expands-hyderabad-operations-new-21000-sqft-office-plans-for-500-more-hires-by-2026</a>
+                    </li>
                     <li><a href="https://www.inkl.com/news/400-seater-office-of-u-s-it-firm-forsys-in-hyderabad-opened"
-                        target="_blank" rel="noopener">inkl.com &mdash; 400-seater office of U.S. IT firm Forsys in
-                        Hyderabad opened</a></li>
+                        target="_blank"
+                        rel="noopener">https://www.inkl.com/news/400-seater-office-of-u-s-it-firm-forsys-in-hyderabad-opened</a>
+                    </li>
                     <li><a
                         href="https://timesofindia.indiatimes.com/city/hyderabad/forsys-sets-up-new-400-seater-facility-in-hyderabad/articleshow/108123283.cms"
-                        target="_blank" rel="noopener">timesofindia.com &mdash; Forsys sets up new 400-seater facility
-                        in Hyderabad</a></li>
+                        target="_blank"
+                        rel="noopener">https://timesofindia.indiatimes.com/city/hyderabad/forsys-sets-up-new-400-seater-facility-in-hyderabad/articleshow/108123283.cms</a>
+                    </li>
                     <li><a
                         href="https://www.thehindu.com/news/cities/Hyderabad/400-seater-office-of-us-it-firm-forsys-in-hyderabad-opened/article67903915.ece"
-                        target="_blank" rel="noopener">thehindu.com &mdash; 400-seater office of US IT firm Forsys in
-                        Hyderabad opened</a></li>
+                        target="_blank"
+                        rel="noopener">https://www.thehindu.com/news/cities/Hyderabad/400-seater-office-of-us-it-firm-forsys-in-hyderabad-opened/article67903915.ece</a>
+                    </li>
                     <li><a href="https://medicircle.in/forsys-inc-opens-new-office-in-financial-district"
-                        target="_blank" rel="noopener">medicircle.in &mdash; Forsys Inc opens new office in Financial
-                        District</a></li>
+                        target="_blank"
+                        rel="noopener">https://medicircle.in/forsys-inc-opens-new-office-in-financial-district</a>
+                    </li>
+                    <li><a
+                        href="https://www.bizzbuzz.news/national/forsys-inc-set-to-invest-10-mn-over-3-yrs-for-expansion-plan-1295263?infinitescroll=1"
+                        target="_blank"
+                        rel="noopener">https://www.bizzbuzz.news/national/forsys-inc-set-to-invest-10-mn-over-3-yrs-for-expansion-plan-1295263?infinitescroll=1</a>
+                    </li>
+                    <li><a href="https://www.telugutimes.net/article/forsys-inc-opens-new-office-in-financial-district"
+                        target="_blank"
+                        rel="noopener">https://www.telugutimes.net/article/forsys-inc-opens-new-office-in-financial-district</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -2097,7 +2228,7 @@
                 src="https://forsysinc.com/blog/wp-content/uploads/2023/07/Copy-of-Salesforce-World-Tour-Essentials-India-SM-Post-1-on-June-7.png"
                 alt="Forsys at Salesforce World Tour Essentials India 2023" class="evt-past-thumb" loading="lazy">
               <span class="evt-past-detail-title">Salesforce World Tour Essentials India 2023</span>
-              <div class="evt-past-detail-meta">Jun 27, 2023 &nbsp;|&nbsp; Jio World Convention Centre, Mumbai</div>
+              <div class="evt-past-detail-meta">Jun 27, 2023</div>
               <div class="evt-past-detail-body">
                 <p>Forsys marked its impactful presence at the Salesforce World Tour Essentials India 2023, showcasing
                   its advanced digital transformation solutions as a top-tier Salesforce partner highlighting the
@@ -2111,10 +2242,11 @@
                 src="https://forsysinc.com/blog/wp-content/uploads/2023/03/Conga-Connect-Mar-23-%E2%80%93-Warm-Emailer-1-2.png"
                 alt="Forsys at Conga Connect 2023" class="evt-past-thumb" loading="lazy">
               <span class="evt-past-detail-title">Conga Connect</span>
-              <div class="evt-past-detail-meta">Apr 10&#8211;12, 2023 &nbsp;|&nbsp; In-Person Event</div>
+              <div class="evt-past-detail-meta">Apr 10&#8211;12, 2023</div>
               <div class="evt-past-detail-body">
-                <p>Forsys engaged with global leadership at Conga Connect 2023, discussing end-to-end digital solutions
-                  powered by Conga for revenue operations transformation.</p>
+                <p>Forsys joined in-person event Conga Connect organized by Conga, the global leader in commercial &
+                  revenue operations transformation, to speak with our global leadership team and learn how our
+                  end-to-end digital solutions powered by Conga enable businesses to streamline revenue operations.</p>
               </div>
             </div>
 
@@ -2123,21 +2255,30 @@
               <img src="https://forsysinc.com/blog/wp-content/uploads/2022/10/kndn.jpg"
                 alt="Forsys at Oracle CloudWorld 2022" class="evt-past-thumb" loading="lazy">
               <span class="evt-past-detail-title">Oracle CloudWorld</span>
-              <div class="evt-past-detail-meta">Oct 17&#8211;20, 2022 &nbsp;|&nbsp; In-Person Event</div>
+              <div class="evt-past-detail-meta">Oct 17&#8211;20, 2022</div>
               <div class="evt-past-detail-body">
-                <p>Forsys showcased end-to-end digital solutions powered by Oracle at Oracle CloudWorld 2022,
-                  demonstrating capabilities across Fusion ERP, Supply Chain, and Integration platforms.</p>
+                <p>Forsys joined in-person event Oracle CloudWorld organized by Oracle, the global leader in commercial
+                  & revenue operations transformation, to speak with our global leadership team and learn how our
+                  end-to-end digital solutions powered by Oracle enable businesses to streamline revenue operations.</p>
               </div>
             </div>
 
             <!-- evt-17 -->
             <div class="evt-past-panel" id="evt-17">
-              <video class="evt-past-video" controls playsinline preload="none" poster="">
-                <source src="https://www.forsysinc.com/Diwali-2022.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <div class="evt-video-facade-wrap" id="diwali-facade-wrap">
+                <video class="evt-past-video" id="diwali-video" controls playsinline preload="metadata"
+                  aria-label="Glimpses of Forsys 2022 Diwali Bash at Hyderabad Office">
+                  <source src="https://www.forsysinc.com/Diwali-2022.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="evt-video-play-overlay" id="diwali-play-overlay" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
               <span class="evt-past-detail-title">Glimpses of Forsys&#8217; 2022 Diwali Bash at Hyderabad Office</span>
-              <div class="evt-past-detail-meta">Oct 19, 2022 &nbsp;|&nbsp; Hyderabad Office</div>
+              <div class="evt-past-detail-meta">Oct 19, 2022</div>
               <div class="evt-past-detail-body">
                 <p>The space was abuzz with fun, laughter, and excitement as we came dressed in our traditional best.
                   The atmosphere was electric with music, dance, and mouth-watering delicacies as we celebrated the
@@ -2151,10 +2292,11 @@
               <img src="https://forsysinc.com/blog/wp-content/uploads/2022/08/events-cc.jpg"
                 alt="Forsys at Conga Connect 2022" class="evt-past-thumb" loading="lazy">
               <span class="evt-past-detail-title">Conga Connect 2022</span>
-              <div class="evt-past-detail-meta">Aug 30&#8211;31, 2022 &nbsp;|&nbsp; In-Person Event</div>
+              <div class="evt-past-detail-meta">Aug 30&#8211;31, 2022 &nbsp;|&nbsp; Pre Event</div>
               <div class="evt-past-detail-body">
-                <p>Forsys participated in Conga Connect 2022, discussing commercial and revenue operations
-                  transformation solutions powered by the Conga platform.</p>
+                <p>Forsys joined in-person event Conga Connect organized by Conga, the global leader in commercial &
+                  revenue operations transformation, to speak with our global leadership team and learn how our
+                  end-to-end digital solutions powered by Conga enable businesses to streamline revenue operations.</p>
               </div>
             </div>
 
@@ -2163,34 +2305,48 @@
               <img src="https://www.forsysinc.com/assets/img/about/img-yoga-event.png"
                 alt="Forsys International Yoga Day 2022" class="evt-past-thumb" loading="lazy">
               <span class="evt-past-detail-title">International Yoga Day</span>
-              <div class="evt-past-detail-meta">Jun 21, 2022 &nbsp;|&nbsp; Virtual Event</div>
+              <div class="evt-past-detail-meta">Jun 21, 2022 &nbsp;|&nbsp; Live Event</div>
               <div class="evt-past-detail-body">
-                <p>An online yoga session conducted by Jaya Chakravarty practicing the Iyengar Yoga tradition &#8212;
-                  celebrating International Yoga Day with the entire Forsys team.</p>
+                <p>Forsys celebrated international yoga day on 21 June, 2022 by attending the online yoga session
+                  conducted by Jaya Chakravarty who practices and teaches yoga in the tradition of Shri BKS Iyengar - a
+                  form popularly known as Iyengar Yoga.</p>
               </div>
             </div>
 
             <!-- evt-20 -->
             <div class="evt-past-panel" id="evt-20">
+              <img class="evt-past-thumb" src="https://www.forsysinc.com/assets/img/about/women-day-2022.jpg"
+                alt="International Women’s Day" />
               <span class="evt-past-detail-title">International Women&#8217;s Day</span>
-              <div class="evt-past-detail-meta">Mar 8, 2022 &nbsp;|&nbsp; Virtual Event</div>
+              <div class="evt-past-detail-meta">Mar 8, 2022 &nbsp;|&nbsp; Live Event</div>
               <div class="evt-past-detail-body">
-                <p>Celebration featuring workforce and guest speakers sharing their views and inspiring stories &#8212;
-                  honoring the contributions and achievements of women at Forsys and beyond.</p>
+                <p>Forsys celebrated the International Women’s Day virtual event with great enthusiasm.
+                  A big thank you to our men and women workforce and the guest speakers for sharing their views and
+                  inspiring stories.</p>
               </div>
+              <a href="../past-webinars/womens-day-2022.html" target="_blank" class="evt-vod-btn">
+                <span class="evt-vod-btn-text">View More</span>
+                <span class="evt-vod-btn-divider" aria-hidden="true"></span>
+                <span class="evt-vod-btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </span>
+              </a>
             </div>
 
             <!-- evt-21 -->
             <div class="evt-past-panel" id="evt-21">
-              <img class="evt-past-thumb" src="https://www.forsysinc.com/blog/wp-content/uploads/2022/04/Capture.png"
+              <img class="evt-past-thumb" src="https://www.forsysinc.com/assets/img/about/img_netsuite_webinar_2022.png"
                 alt="NetSuite Webinar: Why Add PSA Solutions to Your ERP? banner" />
-              <span class="evt-past-detail-title">NetSuite Webinar: Why Add PSA Solutions to Your ERP?</span>
-              <div class="evt-past-detail-meta">Mar 3, 2022 &nbsp;|&nbsp; Virtual Event</div>
+              <span class="evt-past-detail-title">NetSuite Webinar</span>
+              <div class="evt-past-detail-meta">Mar 3, 2022 &nbsp;|&nbsp; Live Event</div>
               <div class="evt-past-detail-body">
                 <p>Forsys and NetSuite in collaboration successfully hosted the <strong>Why Add PSA Solutions to Your
                     ERP</strong> webinar on March 03, 2022. Speakers Ramana Bondugula and Carolyn Olshan talked about
                   the subject in detail.</p>
-                <p><strong>Ramana Bondugula</strong> &nbsp;&middot;&nbsp; <strong>Carolyn Olshan</strong></p>
+
                 <div class="evt-press-links">
                   <ul class="evt-press-links-list">
                     <li><a href="https://www.forsysinc.com/blog/netsuite-webinar-recap-2/" target="_blank"
@@ -2205,10 +2361,10 @@
               <img class="evt-past-thumb" src="https://www.forsysinc.com/assets/img/about/img-upcoming-events.png"
                 alt="Udaan — Forsys Annual Offsite 2021" loading="lazy" />
               <span class="evt-past-detail-title">Udaan</span>
-              <div class="evt-past-detail-meta">Dec 22, 2021 &nbsp;|&nbsp; Virtual Event</div>
+              <div class="evt-past-detail-meta">Dec 22, 2021 &nbsp;|&nbsp; Live Event</div>
               <div class="evt-past-detail-body">
-                <p>Forsys&#8217; annual offsite celebrating team achievements and employee accomplishments &#8212;
-                  recognizing the individuals and teams who made an exceptional impact throughout the year.</p>
+                <p>Forsys organized an annual offsite event virtually to spread festive cheer, celebrate the incredible
+                  work of the teams and honor the collective brilliance of employees.</p>
               </div>
             </div>
 
@@ -2217,12 +2373,11 @@
               <img class="evt-past-thumb" src="https://www.forsysinc.com/assets/img/about/events-srini.png"
                 alt="Forsys Tech Talk 2021" loading="lazy" />
               <span class="evt-past-detail-title">Tech Talk</span>
-              <div class="evt-past-detail-meta">Nov 12, 2021 &nbsp;|&nbsp; Virtual Event</div>
+              <div class="evt-past-detail-meta">Nov 12, 2021 &nbsp;|&nbsp; Live Event</div>
               <div class="evt-past-detail-body">
-                <p>Insights on business architecture, data, and analytics shared with the broader Forsys team and
-                  community.</p>
-                <p><strong>Srinivas Vemuri</strong>, COO, Forsys &nbsp;&middot;&nbsp; <strong>Prasad
-                    Challapalli</strong>, Director Analytics, Forsys</p>
+                <p>Listen to Srinivas Vemuri, COO and Prasad Challapalli, Director Analytics share insights on topics
+                  ranging from enterprise business architecture to the importance of data & analytics.</p>
+
               </div>
             </div>
 
@@ -2232,10 +2387,10 @@
                 src="https://www.forsysinc.com/assets/img/about/img-forsys-vaccination-drive.png"
                 alt="Forsys COVID-19 Vaccination Drive" loading="lazy" />
               <span class="evt-past-detail-title">COVID-19 Vaccination Drive</span>
-              <div class="evt-past-detail-meta">Jun 12, 2021 &nbsp;|&nbsp; In-Person Event</div>
+              <div class="evt-past-detail-meta">Jun 12, 2021 &nbsp;|&nbsp; CSR</div>
               <div class="evt-past-detail-body">
-                <p>Forsys collaborated with Apollo Hospitals to provide free vaccines to employees and their families
-                  &#8212; a CSR initiative to support community health during the COVID-19 pandemic.</p>
+                <p>Forsys collaborated with Apollo Hospitals to provide free vaccines to its employees and their
+                  families.</p>
               </div>
             </div>
 
@@ -2244,10 +2399,10 @@
               <img class="evt-past-thumb" src="https://www.forsysinc.com/assets/img/about/img-iwd.png"
                 alt="Forsys International Women's Day" loading="lazy" />
               <span class="evt-past-detail-title">International Women&#8217;s Day</span>
-              <div class="evt-past-detail-meta">Mar 8, 2021 &nbsp;|&nbsp; Virtual Event</div>
+              <div class="evt-past-detail-meta">Mar 8, 2021 &nbsp;|&nbsp; CSR</div>
               <div class="evt-past-detail-body">
-                <p>An online talk show featuring influential women leaders discussing challenging gender bias and
-                  inequality &#8212; celebrating and amplifying the voices of women at Forsys and across the industry.
+                <p>Forsys organized an online talk show where influential women leaders shared their thoughts on
+                  challenging gender bias and inequality.
                 </p>
               </div>
             </div>
@@ -2257,10 +2412,11 @@
               <img class="evt-past-thumb" src="https://www.forsysinc.com/assets/img/about/img-dreamforce.png"
                 alt="Forsys at Dreamforce 2018" loading="lazy" />
               <span class="evt-past-detail-title">Dreamforce 2018</span>
-              <div class="evt-past-detail-meta">Sep 25, 2018 &nbsp;|&nbsp; San Francisco, CA</div>
+              <div class="evt-past-detail-meta">Sep 25, 2018 &nbsp;|&nbsp; Live Event</div>
               <div class="evt-past-detail-body">
-                <p>Forsys showcased its FloData solution at Dreamforce 2018, helping visitors overcome complex data
-                  integration challenges and accelerate their Salesforce journey.</p>
+                <p>Find out how Forsys helped visitors overcome their complex data integration challenges by leveraging
+                  its in-house solution, <a href="https://flodata.io/" target="_blank"
+                    rel="noopener noreferrer">FloData.</a></p>
               </div>
             </div>
 
@@ -2269,10 +2425,11 @@
               <img class="evt-past-thumb" src="https://www.forsysinc.com/assets/img/about/forsys-flash.png"
                 alt="Forsys Flash — Knowledge Xchange 2018" loading="lazy" />
               <span class="evt-past-detail-title">Forsys Flash &#8211; Knowledge Xchange 2018</span>
-              <div class="evt-past-detail-meta">Apr 26, 2018 &nbsp;|&nbsp; In-Person Event</div>
+              <div class="evt-past-detail-meta">Apr 26, 2018 &nbsp;|&nbsp; Live Event</div>
               <div class="evt-past-detail-body">
-                <p>A thought leadership event covering CPQ, Quote-to-Cash, Financials, Supply Chain, Digital Commerce,
-                  and CRM &#8212; bringing together Forsys experts and industry practitioners.</p>
+                <p>Learn more about Forsys Flash, a series of thought leadership knowledge-sharing events organized to
+                  gain insights on CPQ, Quote-to-Cash, Financials, Supply Chain, Enterprise/B2B Digital Commerce and
+                  CRM.</p>
               </div>
             </div>
 
@@ -2281,10 +2438,11 @@
               <img class="evt-past-thumb" src="https://www.forsysinc.com/assets/img/about/img-apttus-accelerate.png"
                 alt="Forsys at APTTUS Accelerate 2018" loading="lazy" />
               <span class="evt-past-detail-title">APTTUS Accelerate 2018</span>
-              <div class="evt-past-detail-meta">May 14, 2018 &nbsp;|&nbsp; In-Person Event</div>
+              <div class="evt-past-detail-meta">May 14, 2018 &nbsp;|&nbsp; Live Event</div>
               <div class="evt-past-detail-body">
-                <p>Forsys exhibited at APTTUS Accelerate 2018, featuring two new products: <strong>FloData</strong> and
-                  <strong>RISE</strong> solutions for revenue and data transformation.
+                <p>Forsys exhibited at APTTUS Accelerate 2018, featuring two new products: <a href="https://flodata.io/"
+                    target="_blank" rel="noopener noreferrer">FloData</a> and
+                  RISE solutions for revenue and data transformation.
                 </p>
               </div>
             </div>
@@ -2489,6 +2647,34 @@
           '</span>';
         body.insertAdjacentElement('afterend', btn);
       });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var wrap = document.getElementById('diwali-facade-wrap');
+      var video = document.getElementById('diwali-video');
+      var overlay = document.getElementById('diwali-play-overlay');
+      if (!wrap || !video || !overlay) return;
+
+      video.addEventListener('loadedmetadata', function () {
+        video.currentTime = 0.001;
+      });
+
+      function startPlay() {
+        wrap.classList.add('playing');
+        video.play();
+      }
+
+      overlay.addEventListener('click', startPlay);
+      wrap.addEventListener('click', function (e) {
+        if (e.target === overlay || overlay.contains(e.target)) return;
+        if (!wrap.classList.contains('playing')) startPlay();
+      });
+
+      video.addEventListener('play', function () { wrap.classList.add('playing'); });
+      video.addEventListener('pause', function () { wrap.classList.remove('playing'); });
+      video.addEventListener('ended', function () { wrap.classList.remove('playing'); });
     })();
   </script>
 </body>

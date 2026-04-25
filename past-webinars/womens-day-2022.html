@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy International Women&#8217;s Day 2022 | Forsys</title>
+  <meta name="description"
+    content="Forsys celebrates International Women's Day 2022 — Breaking the Bias. Watch conversations with inspiring women leaders on gender equality, diversity, and overcoming challenges.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/resources.css">
+  <style>
+    /* ── Hero ────────────────────────────────────────────────────────────── */
+    .iwd-hero {
+      background: var(--gradient-hero);
+      padding: calc(var(--nav-h) + 40px) 48px 120px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .iwd-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107, 72, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .iwd-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: var(--bg);
+      clip-path: ellipse(55% 100% at 50% 100%);
+      pointer-events: none;
+    }
+
+    .iwd-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .iwd-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--purple-light);
+      border: 1px solid rgba(107, 72, 255, 0.25);
+      color: var(--purple);
+      font-family: Inter, sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 20px;
+    }
+
+    .iwd-hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(36px, 5vw, 68px);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+      color: var(--text-primary);
+      margin: 0 auto 0;
+      max-width: 820px;
+    }
+
+    /* ── Main content section ────────────────────────────────────────────── */
+    .iwd-content {
+      background: var(--bg);
+      padding: 64px 48px 80px;
+    }
+
+    .iwd-content-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Collage image */
+    .iwd-collage {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      margin-bottom: 36px;
+    }
+
+    /* Meta line */
+    .iwd-meta {
+      font-family: Inter, sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    .iwd-meta strong {
+      color: var(--text-primary);
+    }
+
+    /* Quote */
+    .iwd-quote {
+      font-family: Inter, sans-serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--purple);
+      line-height: 1.65;
+      margin: 0 0 6px;
+    }
+
+    .iwd-quote-attr {
+      font-family: Inter, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--purple);
+      text-align: right;
+      margin: 0 0 36px;
+      display: block;
+    }
+
+    /* Divider */
+    .iwd-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 32px 0;
+    }
+
+    /* Body copy */
+    .iwd-body p {
+      font-family: Inter, sans-serif;
+      font-size: 1rem;
+      color: var(--text-primary);
+      line-height: 1.75;
+      margin: 0 0 20px;
+    }
+
+    .iwd-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Videos section ──────────────────────────────────────────────────── */
+    .iwd-videos-section {
+      background: var(--white);
+      padding: 56px 48px 72px;
+      border-top: 1px solid var(--border);
+    }
+
+    .iwd-videos-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .iwd-videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .iwd-yt-item {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .iwd-yt-thumb-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #111;
+      display: block;
+    }
+
+    .iwd-yt-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.2s;
+    }
+
+    .iwd-yt-item:hover .iwd-yt-thumb-wrap img {
+      opacity: 0.88;
+    }
+
+    .iwd-yt-play-circle {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .iwd-yt-play-circle span {
+      width: 52px;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+      transition: transform 0.2s;
+    }
+
+    .iwd-yt-item:hover .iwd-yt-play-circle span {
+      transform: scale(1.1);
+    }
+
+    .iwd-yt-play-circle svg {
+      width: 20px;
+      height: 20px;
+      color: var(--purple);
+      margin-left: 3px;
+    }
+
+    .iwd-yt-title {
+      font-family: Inter, sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--purple);
+      line-height: 1.5;
+      text-decoration: none;
+    }
+
+    /* ── Back button ─────────────────────────────────────────────────────── */
+    .iwd-back-wrap {
+      text-align: center;
+    }
+
+    .iwd-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: Inter, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--purple);
+      text-decoration: none;
+      padding: 10px 28px;
+      border: 1.5px solid rgba(107, 72, 255, 0.4);
+      border-radius: 100px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .iwd-back-btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .iwd-back-btn:hover {
+      background: rgba(107, 72, 255, 0.07);
+      border-color: var(--purple);
+    }
+
+    .iwd-back-btn:focus-visible {
+      outline: 2px solid var(--purple);
+      outline-offset: 2px;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .iwd-hero {
+        padding: calc(var(--nav-h) + 16px) 24px 100px;
+      }
+
+      .iwd-content {
+        padding: 48px 24px 56px;
+      }
+
+      .iwd-videos-section {
+        padding: 48px 24px 56px;
+      }
+
+      .iwd-videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .iwd-videos-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .iwd-yt-thumb-wrap img,
+      .iwd-yt-play-circle span,
+      .iwd-back-btn {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-resources">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/images/Forsys_Logo.svg" alt="Forsys" class="nav-logo-img" height="30" loading="lazy">
+      </a>
+
+      <div class="nav-center" role="menubar">
+
+        <div class="nav-item" role="none">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+            What We Do
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" />
+            </svg>
+          </button>
+          <div class="mega-menu mega-menu--wide" role="menu">
+            <div class="mega-grid mega-grid--wwd">
+              <div class="mega-col">
+                <div class="mega-col-title">Business Advisory</div>
+                <ul>
+                  <li><a href="../services/revenue-lifecycle-strategy.html" role="menuitem">Revenue Lifecycle
+                      Strategy<small>Lead-to-Revenue end-to-end process &amp; advisory</small></a></li>
+                  <li><a href="../services/build-or-buy-strategy.html" role="menuitem">Build or Buy
+                      Strategy<small>Assess Build vs Buy ROI with matured TCO matrix</small></a></li>
+                  <li><a href="../services/enterprise-ai-strategy.html" role="menuitem">Enterprise AI
+                      Strategy<small>Chart your AI journey</small></a></li>
+                  <li><a href="../services/autonomous-commerce.html" role="menuitem">Autonomous Commerce<small>Agentic
+                        Buyer Journeys</small></a></li>
+                </ul>
+              </div>
+              <div class="mega-col mega-col--platform">
+                <div class="mega-col-title mega-col-title--platform">Salesforce Solutions</div>
+                <ul>
+                  <li><a href="../solutions/salesforce/agentforce-crm.html" role="menuitem">Agentforce CRM<small>Sales,
+                        Service, Experience, Marketing</small></a></li>
+                  <li><a href="../solutions/salesforce/agentforce-revenue-management.html" role="menuitem">Agentforce
+                      Revenue Management<small>Quote, Contract, Config, Assets, Billing, Orders</small></a></li>
+                  <li><a href="../solutions/salesforce/agentforce-commerce.html" role="menuitem">Agentforce
+                      Commerce<small>Autonomous Salesforce commerce experiences</small></a></li>
+                  <li><a href="../solutions/salesforce/agentforce-platform.html" role="menuitem">Agentforce
+                      Platform<small>Data 360, Agents &amp; Custom Development</small></a></li>
+                  <li><a href="../solutions/salesforce/manufacturing-cloud.html" role="menuitem">Agentforce
+                      Manufacturing<small>Unify manufacturing on Salesforce</small></a></li>
+                </ul>
+              </div>
+              <div class="mega-col mega-col--platform">
+                <div class="mega-col-title mega-col-title--platform">Conga + PROS B2B</div>
+                <ul>
+                  <li><a href="../solutions/conga-pros/revenue-and-commerce.html" role="menuitem">Revenue &amp;
+                      Commerce<small>Conga CPQ, Digital Commerce &amp; Billing</small></a></li>
+                  <li><a href="../solutions/conga-pros/contract-lifecycle-management.html" role="menuitem">Contract
+                      Lifecycle Management<small>Contracts from creation to renewal</small></a></li>
+                  <li><a href="../solutions/conga-pros/pros-smart-pricing.html" role="menuitem">PROS Smart Pricing
+                      Optimization<small>AI-driven dynamic pricing wins</small></a></li>
+                  <li><a href="../solutions/conga-pros/pros-b2b.html" role="menuitem">PROS Smart CPQ<small>Configure,
+                        price, quote faster</small></a></li>
+                </ul>
+                <div class="mega-sub-divider"></div>
+                <div class="mega-col-title mega-col-title--platform">Oracle Solutions</div>
+                <ul>
+                  <li><a href="../solutions/oracle/fusion-finance-accounting.html" role="menuitem">Fusion Finance &amp;
+                      Accounting<small>Modern Oracle finance operations</small></a></li>
+                  <li><a href="../solutions/oracle/fusion-supply-chain.html" role="menuitem">Fusion Supply Chain &amp;
+                      Manufacturing<small>Connected Oracle supply chain</small></a></li>
+                  <li><a href="../solutions/oracle/oic-paas.html" role="menuitem">OIC / PaaS<small>Integrate and extend
+                        Oracle</small></a></li>
+                  <li><a href="../solutions/oracle/bpa-aistudio.html" role="menuitem">Business Process Automation
+                      &#8212; AIStudio<small>AI-powered process automation</small></a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <div class="mega-col-title">Services</div>
+                <div class="mega-sub-header">Technology</div>
+                <ul>
+                  <li><a href="../services/ai-application-development.html" role="menuitem">AI led Application
+                      Development<small>Intelligent connected IoT apps</small></a></li>
+                  <li><a href="../services/ai-agents-development.html" role="menuitem">AI Agents
+                      Development<small>Custom AI agents &amp; automation</small></a></li>
+                  <li><a href="../services/integrations.html" role="menuitem">Integrations<small>Connect enterprise
+                        systems seamlessly</small></a></li>
+                  <li><a href="../services/data-migration.html" role="menuitem">Data Migration<small>Migrate with speed
+                        and confidence</small></a></li>
+                  <li><a href="../services/devops.html" role="menuitem">DevOps<small>CI/CD, automation &amp; release
+                        excellence</small></a></li>
+                </ul>
+                <div class="mega-sub-divider"></div>
+                <div class="mega-sub-header">Managed Services</div>
+                <ul>
+                  <li><a href="../services/ai-enabled-managed-services.html" role="menuitem">AI-Enabled Managed
+                      Services<small>Proactive, AI-augmented support</small></a></li>
+                </ul>
+              </div>
+              <div class="mega-col">
+                <div class="mega-col-title">AI-Powered Forsys Solutions</div>
+                <ul>
+                  <li><a href="../forsys-solutions/revramp.html" role="menuitem">RevRamp<small>AI-native CPQ
+                        acceleration</small></a></li>
+                  <li><a href="../forsys-solutions/lexishift.html" role="menuitem">LexiShift<small>AI-powered CLM &amp;
+                        contract intelligence</small></a></li>
+                  <li><a href="../forsys-solutions/revmove.html" role="menuitem">RevMove<small>Automated revenue
+                        migration</small></a></li>
+                  <li><a href="../forsys-solutions/mna-for-salesforce.html" role="menuitem">MnA for
+                      Salesforce<small>M&amp;A org consolidation accelerator</small></a></li>
+                  <li><a href="../forsys-solutions/aitest.html" role="menuitem">AITest<small>AI-driven test
+                        automation</small></a></li>
+                  <li><a href="../forsys-solutions/ai-agents.html" role="menuitem">AI Agents<small>Autonomous RevOps
+                        agents</small></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+            Industries
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" />
+            </svg>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="../industries/hi-tech.html" role="menuitem">Hi-Tech</a>
+            <a href="../industries/financial-services.html" role="menuitem">Financial Services</a>
+            <a href="../industries/healthcare-life-sciences.html" role="menuitem">Healthcare &amp; Life Sciences</a>
+            <a href="../industries/manufacturing.html" role="menuitem">Manufacturing</a>
+            <a href="../industries/saas-subscription.html" role="menuitem">SaaS &amp; Subscription</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+            Partnerships
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" />
+            </svg>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="../partnerships/salesforce.html" role="menuitem">Salesforce</a>
+            <a href="../partnerships/conga.html" role="menuitem">Conga</a>
+            <a href="../partnerships/oracle.html" role="menuitem">Oracle</a>
+            <a href="../partnerships/rocketlane.html" role="menuitem">RocketLane</a>
+            <a href="../partnerships/provus.html" role="menuitem">Provus</a>
+            <a href="../partnerships/m3ter.html" role="menuitem">M3ter</a>
+            <a href="../partnerships/servicenow.html" role="menuitem">ServiceNow</a>
+            <a href="../partnerships/flosum.html" role="menuitem">Flosum</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+            Resources
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" />
+            </svg>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="../resources/customer-stories.html" role="menuitem">Customer Stories</a>
+            <a href="../resources/events.html" role="menuitem">Webinars &amp; Events</a>
+            <a href="../resources/blogs.html" role="menuitem">Blogs</a>
+          </div>
+        </div>
+
+        <div class="nav-item" role="none">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false" role="menuitem">
+            Company
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" />
+            </svg>
+          </button>
+          <div class="dropdown" role="menu">
+            <a href="../company/about.html" role="menuitem">About Forsys</a>
+            <a href="../company/leadership.html" role="menuitem">Leadership</a>
+            <a href="../company/culture.html" role="menuitem">Culture</a>
+            <a href="../company/careers.html" role="menuitem">Careers</a>
+            <a href="../company/news-press.html" role="menuitem">News &amp; Press</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="nav-right">
+        <a href="../company/contact.html" class="btn-nav-primary">Contact Us</a>
+        <button class="nav-burger" aria-label="Open menu"
+          aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="iwd-hero" aria-labelledby="iwd-page-title">
+      <div class="iwd-hero-inner">
+        <div class="iwd-hero-badge">Culture &amp; Events</div>
+        <h1 class="iwd-hero-title" id="iwd-page-title">
+          Happy International <span class="gradient-text">Women&#8217;s Day!!</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="iwd-content">
+      <div class="iwd-content-inner">
+
+        <!-- Collage image -->
+        <img src="https://www.forsysinc.com/assets/img/about/womens-day-2022-banner.jpg"
+          alt="Forsys International Women's Day 2022 — team collage" class="iwd-collage" loading="lazy">
+
+        <!-- Meta -->
+        <p class="iwd-meta">March 8, 2022 &nbsp;|&nbsp; <strong>Live Event</strong></p>
+
+        <!-- Quote -->
+        <p class="iwd-quote">&#8220;A strong woman knows she has strength enough for the journey, but a woman of
+          strength knows that it is in the journey where she will become strong.&#8221;</p>
+        <span class="iwd-quote-attr">&#8212; Luke Easter</span>
+
+        <hr class="iwd-divider">
+
+        <!-- Body copy -->
+        <div class="iwd-body">
+          <p>Wishing everyone a <strong>Happy International Women&#8217;s Day!</strong></p>
+          <p>As the theme for <strong>International Women&#8217;s Day 2022</strong> focuses on breaking the bias,
+            together we can forge women&#8217;s equality and create a more inclusive and gender-equal world when we
+            actively call out gender bias, discrimination and stereotyping every time we encounter it.</p>
+          <p>We understand that as much as breaking the bias needs conviction and courage, it also needs a deeply
+            undervalued ability to respect others&#8217; interests while making choices. Women deserve and want a future
+            free from stigma, stereotypes and bias; a future that&#8217;s peaceful, sustainable, with equal rights and
+            opportunities. And to get us there, women are needed at every table where decisions are being made.</p>
+          <p>We are proud of the strong and influential women we have here at Forsys who all contribute to our
+            company&#8217;s success. You have filled our workplace and this professional environment with your constant
+            love, care, nurture, support and compassion.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Videos -->
+    <section class="iwd-videos-section" aria-label="Featured conversations">
+      <div class="iwd-videos-inner">
+
+        <div class="iwd-videos-grid">
+
+          <!-- Video 1 -->
+          <a class="iwd-yt-item" href="https://www.youtube.com/watch?v=BZNNW7VgoBA" target="_blank"
+            rel="noopener noreferrer">
+            <div class="iwd-yt-thumb-wrap">
+              <img src="https://img.youtube.com/vi/BZNNW7VgoBA/maxresdefault.jpg"
+                alt="In Conversation with Divya Yerraguntla on IWD2022 thumbnail" loading="lazy"
+                onerror="this.src='https://img.youtube.com/vi/BZNNW7VgoBA/hqdefault.jpg'">
+              <div class="iwd-yt-play-circle" aria-hidden="true">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <span class="iwd-yt-title">Interview: In Conversation with Divya Yerraguntla, VP, Asset Strategy at Syneos
+              Health on #IWD2022</span>
+          </a>
+
+          <!-- Video 2 -->
+          <a class="iwd-yt-item" href="https://www.youtube.com/watch?v=1MYOZORjJzI" target="_blank"
+            rel="noopener noreferrer">
+            <div class="iwd-yt-thumb-wrap">
+              <img src="https://www.forsysinc.com/assets/img/about/sreedevi-devireddy.jpg"
+                alt="Sreedevi Devireddy on facing fears and breaking the bias thumbnail" loading="lazy"
+                onerror="this.src='https://img.youtube.com/vi/1MYOZORjJzI/hqdefault.jpg'">
+              <div class="iwd-yt-play-circle" aria-hidden="true">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <span class="iwd-yt-title">Listen to Sreedevi Devireddy talk on facing fears, overcoming challenges, &amp;
+              breaking the bias.</span>
+          </a>
+
+          <!-- Video 3 -->
+          <a class="iwd-yt-item" href="https://www.youtube.com/watch?v=jrWATSYd1rI" target="_blank"
+            rel="noopener noreferrer">
+            <div class="iwd-yt-thumb-wrap">
+              <img src="https://www.forsysinc.com/assets/img/about/vanitha-datla.jpg"
+                alt="Vanitha Datla on gender equality and diversity thumbnail" loading="lazy"
+                onerror="this.src='https://img.youtube.com/vi/jrWATSYd1rI/hqdefault.jpg'">
+              <div class="iwd-yt-play-circle" aria-hidden="true">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <span class="iwd-yt-title">Women&#8217;s Day 2022 | Listen to Vanitha Datla talk on the importance of gender
+              equality, diversity.</span>
+          </a>
+
+        </div>
+
+        <!-- Back button -->
+        <div class="iwd-back-wrap">
+          <a href="../resources/events.html" class="iwd-back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M19 12H5M5 12l7-7M5 12l7 7" />
+            </svg>
+            Back to Events
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer aria-label="Site footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">
+          <img src="../assets/images/Forsys_Logo.svg" alt="Forsys" class="nav-logo-img footer-logo-img" height="30"
+            loading="lazy">
+        </a>
+        <p>AI Native. AI Fast. The Lead-to-Revenue transformation partner for modern enterprises &mdash; 500+
+          engagements, 250+ global customers, 1,000+ specialists.</p>
+      </div>
+      <div class="footer-col">
+        <h4>What We Do</h4>
+        <ul>
+          <li><a href="../services/revenue-lifecycle-strategy.html">Revenue Lifecycle Strategy</a></li>
+          <li><a href="../services/enterprise-ai-strategy.html">Enterprise AI Strategy</a></li>
+          <li><a href="../services/ai-application-development.html">AI Application Development</a></li>
+          <li><a href="../services/ai-enabled-managed-services.html">AI Managed Services</a></li>
+          <li><a href="../forsys-solutions/revramp.html">Forsys AI Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="../industries/hi-tech.html">Hi-Tech</a></li>
+          <li><a href="../industries/financial-services.html">Financial Services</a></li>
+          <li><a href="../industries/healthcare-life-sciences.html">Healthcare &amp; Life Sciences</a></li>
+          <li><a href="../industries/manufacturing.html">Manufacturing</a></li>
+          <li><a href="../industries/saas-subscription.html">SaaS &amp; Subscriptions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../resources/customer-stories.html">Customer Stories</a></li>
+          <li><a href="../resources/thought-leadership.html">Thought Leadership</a></li>
+          <li><a href="../resources/events.html">Webinars &amp; Media</a></li>
+          <li><a href="http://forsysinc.com/blog">Blogs</a></li>
+          <li><a href="../resources/events.html">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../company/about.html">About Forsys</a></li>
+          <li><a href="../company/leadership.html">Leadership</a></li>
+          <li><a href="../company/culture.html">Culture</a></li>
+          <li><a href="../company/careers.html">Careers</a></li>
+          <li><a href="../company/news-press.html">News &amp; Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Forsys Inc. All rights reserved. &nbsp;&middot;&nbsp; info@forsysinc.com</span>
+      <span class="footer-tagline">AI Native &middot; AI Fast &middot; Revenue Transformed</span>
+      <button class="policy-btn" aria-haspopup="true" aria-expanded="false">
+        Policy
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M2 8l4-4 4 4" />
+        </svg>
+        <div class="policy-dropup" role="menu">
+          <a href="../company/privacy-policy.html" role="menuitem">Privacy Policy</a>
+          <a href="../company/sustainability-policy.html" role="menuitem">Sustainability Policy</a>
+        </div>
+      </button>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js" defer></script>
+
+</body>
+
+</html>
