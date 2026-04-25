@@ -30,7 +30,9 @@
       "Bash(git mv *)",
       "Bash(tasklist)",
       "PowerShell(Rename-Item -Path 'assets' -NewName 'new-assets' -ErrorAction Stop)",
-      "PowerShell($blocking = @\\(\\); Get-Process | Where-Object { $_.ProcessName -match 'node|chrome|brave|firefox|msedge|code|cursor' } | ForEach-Object { try { $files = Get-Process -Id $_.Id -Module -ErrorAction SilentlyContinue | Where-Object { $_.FileName -match 'assets' }; if \\($files\\) { $blocking += [PSCustomObject]@{ Pid = $_.Id; Name = $_.ProcessName; Path = $files.FileName -join ', ' } } } catch {} }; if \\($blocking.Count -eq 0\\) { Write-Output 'No process modules under assets/ found via Get-Process -Module — likely a directory handle from cmd, explorer, or background watcher' } else { $blocking | Format-Table -AutoSize | Out-String })"
+      "PowerShell($blocking = @\\(\\); Get-Process | Where-Object { $_.ProcessName -match 'node|chrome|brave|firefox|msedge|code|cursor' } | ForEach-Object { try { $files = Get-Process -Id $_.Id -Module -ErrorAction SilentlyContinue | Where-Object { $_.FileName -match 'assets' }; if \\($files\\) { $blocking += [PSCustomObject]@{ Pid = $_.Id; Name = $_.ProcessName; Path = $files.FileName -join ', ' } } } catch {} }; if \\($blocking.Count -eq 0\\) { Write-Output 'No process modules under assets/ found via Get-Process -Module — likely a directory handle from cmd, explorer, or background watcher' } else { $blocking | Format-Table -AutoSize | Out-String })",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__switch_browser"
     ]
   }
 }
