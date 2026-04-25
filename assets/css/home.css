@@ -174,18 +174,18 @@
 }
 .wwd-pillar-items li a {
   font-size: 13px; color: var(--text-secondary); text-decoration: none; font-weight: 500;
-  display: flex; align-items: center; gap: 7px; transition: color 0.15s;
+  display: flex; align-items: flex-start; gap: 7px; transition: color 0.15s;
 }
 .wwd-pillar-items li a::before {
-  content: '·'; color: var(--purple); font-size: 20px; line-height: 1; flex-shrink: 0;
+  content: '·'; color: var(--purple); font-size: 20px; line-height: 0.7; flex-shrink: 0;
 }
 .wwd-pillar-items li a:hover { color: var(--purple); }
 .wwd-pillar-items li span {
   font-size: 13px; color: var(--text-secondary); font-weight: 500;
-  display: flex; align-items: center; gap: 7px;
+  display: flex; align-items: flex-start; gap: 7px;
 }
 .wwd-pillar-items li span::before {
-  content: '·'; color: var(--purple); font-size: 20px; line-height: 1; flex-shrink: 0;
+  content: '·'; color: var(--purple); font-size: 20px; line-height: 0.7; flex-shrink: 0;
 }
 .wwd-pillar-cta {
   display: inline-flex; align-items: center; gap: 7px;
@@ -424,7 +424,7 @@
 .partner-card:hover { border-color: var(--purple); box-shadow: 0 8px 32px rgba(107, 72, 255, 0.09); transform: translateY(-3px); }
 .partner-card-logo {
   display: block;
-  height: 36px;
+  height: 55px;
   width: auto;
   max-width: 160px;
   object-fit: contain;

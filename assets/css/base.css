@@ -565,6 +565,10 @@ footer { background: var(--gradient-dark); padding: 64px 48px 36px; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer-col ul a { font-size: 13.5px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.15s; }
 .footer-col ul a:hover { color: #fff; }
+.footer-social { display: flex; gap: 10px; margin-top: 22px; }
+.footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.15); color: rgba(255, 255, 255, 0.6); transition: color 0.18s, border-color 0.18s, background 0.18s, transform 0.18s; }
+.footer-social a:hover { color: #fff; border-color: var(--purple); background: rgba(107, 72, 255, 0.18); transform: translateY(-2px); }
+.footer-social a:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
 .footer-bottom {
   max-width: var(--container-max); margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;

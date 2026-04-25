@@ -20,7 +20,17 @@
       "Bash(bash /tmp/check_links.sh)",
       "Bash(bash /tmp/check_all.sh)",
       "Bash(grep -r \"igloo\" . --include=\"*.html\" ! -path \"*/forsys-website-new-main/*\")",
-      "Bash(grep -r \"summit-partner\" . --include=\"*.html\" ! -path \"*/forsys-website-new-main/*\")"
+      "Bash(grep -r \"summit-partner\" . --include=\"*.html\" ! -path \"*/forsys-website-new-main/*\")",
+      "PowerShell($f = 'index.html'; $c = Get-Content -Raw -LiteralPath $f; Write-Output \\('Length: ' + $c.Length\\); Write-Output \\('Contains exact: ' + $c.Contains\\('Assess Build vs Buy ROI with matured TCO matrix'\\)\\); $idx = $c.IndexOf\\('Assess Build'\\); if \\($idx -ge 0\\) { Write-Output \\('Found at: ' + $idx\\); Write-Output \\('Snippet: [' + $c.Substring\\($idx, 60\\) + ']'\\) })",
+      "Bash(git add *)",
+      "Bash(git push *)",
+      "Bash(curl -s -o /dev/null -w \"\" http://localhost:8080/)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:8080/)",
+      "Bash(git checkout *)",
+      "Bash(git mv *)",
+      "Bash(tasklist)",
+      "PowerShell(Rename-Item -Path 'assets' -NewName 'new-assets' -ErrorAction Stop)",
+      "PowerShell($blocking = @\\(\\); Get-Process | Where-Object { $_.ProcessName -match 'node|chrome|brave|firefox|msedge|code|cursor' } | ForEach-Object { try { $files = Get-Process -Id $_.Id -Module -ErrorAction SilentlyContinue | Where-Object { $_.FileName -match 'assets' }; if \\($files\\) { $blocking += [PSCustomObject]@{ Pid = $_.Id; Name = $_.ProcessName; Path = $files.FileName -join ', ' } } } catch {} }; if \\($blocking.Count -eq 0\\) { Write-Output 'No process modules under assets/ found via Get-Process -Module — likely a directory handle from cmd, explorer, or background watcher' } else { $blocking | Format-Table -AutoSize | Out-String })"
     ]
   }
 }
